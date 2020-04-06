@@ -1,0 +1,27 @@
+<div class="container">
+    <div class="card">
+        <h3 class="card-header">Register</h3>
+        <form [formGroup]="regForm" (ngSubmit)="RegUser()">
+            <label for="">Name</label>
+            <input class="form-control" formControlName="name" type="text">
+            <label for="">Email</label>
+            <input class="form-control" formControlName="email" type="text">
+            <label for="">Password</label>
+            <input class="form-control" formControlName="password" type="text">
+            <label for="">Confirm Password</label>
+            <input class="form-control" formControlName="con_password" type="text">
+            <label for="">Gender</label>
+            <select class="form-control" formControlName="gender" >
+                <option value="male">Male</option>
+                <option value="Female">Female</option>
+            </select>
+
+
+
+
+
+
+            <input class="btn btn-dark" value="Login" type="submit">
+        </form>
+    </div>
+</div>

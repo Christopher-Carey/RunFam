@@ -10,16 +10,16 @@ export class ApiService {
     return this._http.get('/api');
   }
   getApi(id){
-    return this._http.get(`/api/task/${id}`,id);
+    return this._http.get(`/api/user/${id}`,id);
   }
   createApi(newApi){
-    return this._http.post('/api/task/new',newApi);
+    return this._http.post('/api/user/new',newApi);
   }
   deleteApi(id){
-    return this._http.delete(`/api/task/destroy/${id}`,id);
+    return this._http.delete(`/api/user/destroy/${id}`,id);
   }
   updateApi(updateApi){
-    return this._http.put(`/api/task/update/${updateApi._id}`,updateApi);
+    return this._http.put(`/api/user/update/${updateApi._id}`,updateApi);
   }
 }
 

@@ -1,0 +1,13 @@
+<div class="container">
+    <div class="card">
+        <h1>{{loginForm.controls.email.value}}</h1>
+        <h3 class="card-header">Login</h3>
+        <form [formGroup]="loginForm" (ngSubmit)="ApiFromService(loginForm.controls.email.value)">
+            <label for="">Email</label>
+            <input class="form-control" formControlName="email" type="text">
+            <label for="">Password</label>
+            <input class="form-control" formControlName="password" type="text">
+            <input class="btn btn-dark" value="Login" type="submit">
+        </form>
+    </div>
+</div>
