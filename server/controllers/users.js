@@ -25,10 +25,16 @@ const mongoose = require('mongoose'),
                 .then(user => response.json({ results: user }))
                 .catch(err => response.json({ error: err.error }))
         },
+        // update: function (request, response) {
+        //     user.updateOne({email: request.params.email },{ $push:{ distance: "test"}})
+        //     // // finance.updateOne({_id:request.params.id}, request.body)
+        //     // // user.updateOne({email:request.params.id},{ $push: { friends: friend } request.body)
+        //         .then(result =>  response.json({ results: result }))
+        //         .catch(err => response.json({ error: err.error }))
+        // }
         update: function (request, response) {
-            console.log(request.body)
-            user.updateOne({_id:request.params.id}, request.body)
-                .then(result =>  response.json({ results: result }))
+            user.updateOne({email:request.body.email}, request.body)
+                .then(result => response.json({ results: result }))
                 .catch(err => response.json({ error: err.error }))
         }
     };

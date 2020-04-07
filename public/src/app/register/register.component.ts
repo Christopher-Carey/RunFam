@@ -25,7 +25,8 @@ export class RegisterComponent implements OnInit {
       email: new FormControl(),
       password: new FormControl(),
       con_password: new FormControl(),
-      gender: new FormControl()
+      gender: new FormControl(),
+      goal:new FormControl()
     });
   }
   RegUser(){
@@ -46,6 +47,7 @@ export class RegisterComponent implements OnInit {
     this.regForm.controls.email.setValue('')
     this.regForm.controls.password.setValue('')
     this.regForm.controls.con_password.setValue('')
+    this.regForm.controls.goal.setValue('')
 
 
   }

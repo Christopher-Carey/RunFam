@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Chart } from 'chart.js'
+import { ApiService } from '../api.service'
+import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
+import { AppComponent } from '../app.component';
 
 @Component({
   selector: 'app-user-dash',
@@ -8,18 +11,40 @@ import { Chart } from 'chart.js'
 })
 export class UserDashComponent implements OnInit {
   Chart = [];
+  user;  
+  totalDist = 0
+  distLeft;
+  milesForm : FormGroup
+  arr;
 
 
-  constructor() { }
+  constructor(
+    private _apiService: ApiService,
+    private formBuilder : FormBuilder,
+    private appComp : AppComponent,
+  ) { }
 
   ngOnInit() {
+    this.totalDist = 0
+    this.milesForm = new FormGroup({
+      date: new FormControl(),
+      miles: new FormControl()
+    });
+
+    this.user = this.appComp.user
+    for(let i = 0; i<this.user.distance.length;i++){
+      this.totalDist += this.user.distance[i][1]
+    }
+    console.log(this.totalDist)
+    this.distLeft = this.user.goal - this.totalDist
+  
     this.Chart = new Chart('chart', {
       type: 'doughnut',
       data: {
-          labels: ["Goal","Accomplishment"],
+          labels: ["Distance Left","Accomplished"],
           datasets: [{
               label: '',
-              data: [100,20],
+              data: [this.distLeft,this.totalDist],
               backgroundColor: [
                 'rgb(221,82,43, 0.2)',
                 'rgb(36,98,36, 0.2)',
@@ -35,5 +60,16 @@ export class UserDashComponent implements OnInit {
       }
   });
   }
+
+  addMiles(){
+    this.user.distance.push([this.milesForm.controls.date.value,this.milesForm.controls.miles.value])
+   
+    console.log(this.user.email)
+    let observable = this._apiService.updateApi(this.user);
+      observable.subscribe(results => {
+        console.log("yay",results)
+      })
+      this.ngOnInit()
+    }
 
 }

@@ -12,15 +12,15 @@
     </div>
     <div class="row">
         <div class="col">
-            <app-login></app-login>
+            <app-login *ngIf="loggedIn == false" ></app-login>
 
         </div>
         <div class="col">
-            <app-register></app-register>
+            <app-register *ngIf="loggedIn == false" ></app-register>
 
         </div>
     </div>
-    <app-user-dash></app-user-dash>
+    <app-user-dash *ngIf="loggedIn == true"></app-user-dash>
     
-    <router-outlet></router-outlet>
+    <router-outlet ></router-outlet>
 </div>

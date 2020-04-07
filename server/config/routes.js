@@ -8,7 +8,7 @@ module.exports = function (app) {
 
     app.post("/api/user/new", (request, response) => user.create(request,response)); 
 
-    app.put("/api/user/update/:id", (request, response) => user.update(request,response));
+    app.put("/api/user/update/:email", (request, response) => user.update(request,response));
 
     app.delete("/api/user/destroy/:id", (request, response) => user.destroy(request,response));  
 

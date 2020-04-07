@@ -24,7 +24,7 @@ import { UserDashComponent } from './user-dash/user-dash.component';
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [ApiService],
+  providers: [ApiService,LoginComponent,AppComponent,UserDashComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
