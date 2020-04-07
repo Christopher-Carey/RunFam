@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from './api.service'
-// import { LoginComponent } from './login/login.component';
 
 
 @Component({
@@ -14,7 +13,6 @@ export class AppComponent implements OnInit {
 
   constructor(
     private _apiService: ApiService,
-    // private loginComp: LoginComponent
     ){}
 
   ngOnInit(){

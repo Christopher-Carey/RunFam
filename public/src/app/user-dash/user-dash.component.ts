@@ -10,12 +10,15 @@ import { AppComponent } from '../app.component';
   styleUrls: ['./user-dash.component.css']
 })
 export class UserDashComponent implements OnInit {
+
+//======Variables======
   Chart = [];
   user;  
   totalDist = 0
   distLeft;
   milesForm : FormGroup
   arr;
+//====================
 
 
   constructor(
@@ -35,9 +38,8 @@ export class UserDashComponent implements OnInit {
     for(let i = 0; i<this.user.distance.length;i++){
       this.totalDist += this.user.distance[i][1]
     }
-    console.log(this.totalDist)
     this.distLeft = this.user.goal - this.totalDist
-  
+
     this.Chart = new Chart('chart', {
       type: 'doughnut',
       data: {
@@ -59,17 +61,19 @@ export class UserDashComponent implements OnInit {
      
       }
   });
+
   }
 
+  //======Methods========
   addMiles(){
     this.user.distance.push([this.milesForm.controls.date.value,this.milesForm.controls.miles.value])
    
-    console.log(this.user.email)
     let observable = this._apiService.updateApi(this.user);
       observable.subscribe(results => {
-        console.log("yay",results)
+        // console.log("yay",results)
       })
       this.ngOnInit()
     }
+  //====================
 
 }

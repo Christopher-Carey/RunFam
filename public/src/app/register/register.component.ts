@@ -15,9 +15,11 @@ export class RegisterComponent implements OnInit {
     private _apiService: ApiService,
     private formBuilder : FormBuilder
   ) { }
+//======Variables======
   regForm : FormGroup;
   user;
   hashed
+//=====================
 
   ngOnInit() {
     this.regForm = new FormGroup({
@@ -29,10 +31,10 @@ export class RegisterComponent implements OnInit {
       goal:new FormControl()
     });
   }
+  //======Methods========
   RegUser(){
     var password = this.regForm.controls.password.value
     this.hashed = bcrypt.hashSync(password, 10);    
-    console.log(this.hashed)
     this.createUser()
   }
 
@@ -40,7 +42,7 @@ export class RegisterComponent implements OnInit {
     this.regForm.controls.password.setValue(this.hashed)
     let observable = this._apiService.createApi(this.regForm.value);
     observable.subscribe(results => {
-      console.log("yay",results)
+      // console.log("yay",results)
     })
     this.regForm.controls.name.setValue('')
     this.regForm.controls.password.setValue('')
@@ -48,8 +50,7 @@ export class RegisterComponent implements OnInit {
     this.regForm.controls.password.setValue('')
     this.regForm.controls.con_password.setValue('')
     this.regForm.controls.goal.setValue('')
-
-
   }
+//======================
 
 }
