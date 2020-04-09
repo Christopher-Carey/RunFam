@@ -9,13 +9,15 @@ import { ApiService } from './api.service';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { UserDashComponent } from './user-dash/user-dash.component';
+import { LeaderComponent } from './leader/leader.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     RegisterComponent,
-    UserDashComponent
+    UserDashComponent,
+    LeaderComponent
   ],
   imports: [
     BrowserModule,

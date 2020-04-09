@@ -6,6 +6,7 @@ const UserSchema = new mongoose.Schema({
     password: String,
     gender: String,
     goal:Number,
-    distance: Array
+    distance: Array,
+    totalDist:Number
 })
 mongoose.model('user', UserSchema);

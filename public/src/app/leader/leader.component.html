@@ -1,0 +1,14 @@
+<table class="table table-dark table-hover">
+    <thead>
+      <tr>
+        <th>Firstname</th>
+        <th>Total Distance</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let x of allUsers">
+        <td>{{x.name}}</td>
+        <td>{{x.totalDist}}</td>
+      </tr>
+    </tbody>
+  </table>

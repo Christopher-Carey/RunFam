@@ -35,6 +35,7 @@ export class UserDashComponent implements OnInit {
     });
 
     this.user = this.appComp.user
+
     for(let i = 0; i<this.user.distance.length;i++){
       this.totalDist += this.user.distance[i][1]
     }
@@ -66,7 +67,12 @@ export class UserDashComponent implements OnInit {
 
   //======Methods========
   addMiles(){
+    this.totalDist = 0
     this.user.distance.push([this.milesForm.controls.date.value,this.milesForm.controls.miles.value])
+    for(let i = 0; i<this.user.distance.length;i++){
+      this.totalDist += this.user.distance[i][1]
+    }
+    this.user.totalDist = this.totalDist
    
     let observable = this._apiService.updateApi(this.user);
       observable.subscribe(results => {

@@ -6,7 +6,7 @@ const mongoose = require('mongoose'),
     module.exports = {
 
         index: function (request, response) {
-            user.find()
+            user.find().sort("-totalDist")
                 .then(users => response.json({ results: users }))
                 .catch(err => response.json({ error: err.error }))
         },
