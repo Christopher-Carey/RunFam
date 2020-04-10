@@ -6,8 +6,10 @@
         <h3 class="card-header">Login</h3>
         <form [formGroup]="loginForm" (ngSubmit)="ApiFromService(loginForm.controls.email.value)">
             <label for="">Email</label>
+            <label style="color: red; margin-left: 40px;" *ngIf="errors.email">{{errors.email}}</label>
             <input class="form-control" formControlName="email" type="text">
             <label for="">Password</label>
+            <label style="color: red; margin-left: 40px;" *ngIf="errors.password">{{errors.password}}</label>
             <input class="form-control" formControlName="password" type="text">
             <input class="btn btn-dark" value="Login" type="submit">
         </form>

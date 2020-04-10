@@ -7,6 +7,6 @@ const UserSchema = new mongoose.Schema({
     gender: String,
     goal:Number,
     distance: Array,
-    totalDist:Number
+    totalDist:Number,
 })
 mongoose.model('user', UserSchema);

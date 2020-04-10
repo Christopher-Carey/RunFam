@@ -20,6 +20,10 @@ export class LoginComponent implements OnInit{
 //======Variables======
   user;
   loginForm : FormGroup;
+  errors={
+    email:"",
+    password:""
+  }
 //=====================
 
 
@@ -39,7 +43,15 @@ export class LoginComponent implements OnInit{
       // console.log("yay",results)
       this.user = results['results']
       this.appComp.user = results['results']
-      this.appComp.loggedIn = bcrypt.compareSync(password, this.user.password); // true
+      if(this.user == null){
+        this.errors.email = "No such User..Need to Register?"
+      }else{
+        this.appComp.loggedIn = bcrypt.compareSync(password, this.user.password); // true
+        if(this.appComp.loggedIn == false){
+          this.errors.password= "Wrong Password"
+        }
+        console.log(this.errors)
+      }
     })
   }
   //=====================

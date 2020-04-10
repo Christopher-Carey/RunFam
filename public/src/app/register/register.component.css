@@ -6,4 +6,8 @@
 .btn{
     margin-top: 20px;
     background-color: #DE532C;
+    border: none;
+}
+.card-header{
+    background-color: rgba(86, 123, 151, 0.2);
 }

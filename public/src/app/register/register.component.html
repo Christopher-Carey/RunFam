@@ -3,19 +3,24 @@
         <h3 class="card-header">Register</h3>
         <form [formGroup]="regForm" (ngSubmit)="RegUser()">
             <label for="">Name</label>
+            <label style="color: red; margin-left: 40px;" *ngIf="errors.name">{{errors.name}}</label>
             <input class="form-control" formControlName="name" type="text">
             <label for="">Email</label>
+            <label style="color: red; margin-left: 40px;" *ngIf="errors.email">{{errors.email}}</label>
             <input class="form-control" formControlName="email" type="text">
             <label for="">Password</label>
-            <input class="form-control" formControlName="password" type="text">
+            <label style="color: red; margin-left: 40px;" *ngIf="errors.password">{{errors.password}}</label>
+            <input class="form-control" formControlName="password" type="password">
             <label for="">Confirm Password</label>
-            <input class="form-control" formControlName="con_password" type="text">
+            <input class="form-control" formControlName="con_password" type="password">
             <label for="">Gender</label>
+            <label style="color: red; margin-left: 40px;" *ngIf="errors.gender">{{errors.gender}}</label>
             <select class="form-control" formControlName="gender" >
                 <option value="male">Male</option>
                 <option value="Female">Female</option>
             </select>
             <label for="">Distance Goal</label>
+            <label style="color: red; margin-left: 40px;" *ngIf="errors.goal">{{errors.goal}}</label>
             <input class="form-control" formControlName="goal" type="text">
 
             <input class="btn btn-dark" value="Register" type="submit">
