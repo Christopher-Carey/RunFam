@@ -27,8 +27,6 @@ allUsers;
     observable.subscribe(results => {
       // console.log("yay",results)
       this.allUsers = results['results']
-      console.log(this.allUsers)
-      // this._apiService.getApis()
     })
   }
 

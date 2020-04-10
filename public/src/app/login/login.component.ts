@@ -46,11 +46,10 @@ export class LoginComponent implements OnInit{
       if(this.user == null){
         this.errors.email = "No such User..Need to Register?"
       }else{
-        this.appComp.loggedIn = bcrypt.compareSync(password, this.user.password); // true
+        this.appComp.loggedIn = bcrypt.compareSync(password, this.user.password);
         if(this.appComp.loggedIn == false){
           this.errors.password= "Wrong Password"
         }
-        console.log(this.errors)
       }
     })
   }

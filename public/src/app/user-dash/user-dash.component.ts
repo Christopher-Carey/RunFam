@@ -93,18 +93,15 @@ export class UserDashComponent implements OnInit {
     this.getBase64(file).then(
       data => {
         this.base = data
-        console.log(data)
-        console.log(this.base)
       }
     );
-    console.log(this.base)
-    console.log(event)
+    // console.log(event)
   }
 
   test() {
     this.spinner = true
     const worker = createWorker({
-      logger: m => console.log(m)
+      // logger: m => console.log(m)
     });
 
     (async () => {
@@ -114,17 +111,17 @@ export class UserDashComponent implements OnInit {
       const { data: { text } } = await worker.recognize(this.File);
       this.TextOutput = text
       this.TextArry = text.split(" ")
-      console.log(this.TextArry)
-      console.log(this.TextArry.indexOf("HEART") + 2)
+      // console.log(this.TextArry)
+      // console.log(this.TextArry.indexOf("HEART") + 2)
 
       var ttt = this.TextArry[this.TextArry.indexOf("HEART") + 2]
       var tttt = ttt.slice(3)
       var cccc = parseFloat(tttt)
       this.milesForm.controls.miles.setValue(cccc)
-      console.log(ttt.slice(3))
-      console.log(this.TextArry[this.TextArry.indexOf("HEART") + 2])
+      // console.log(ttt.slice(3))
+      // console.log(this.TextArry[this.TextArry.indexOf("HEART") + 2])
 
-      console.log(text);
+      // console.log(text);
       await worker.terminate();
       this.spinner = false
 
@@ -140,15 +137,6 @@ export class UserDashComponent implements OnInit {
       reader.onerror = error => reject(error);
     });
   }
-  // ApiFromService(id){
-  //   let observable = this._apiService.getApi(id);
-  //   observable.subscribe(results => {
-  //     console.log("yay",results)
-  //     this.user = results['results']
-  //   })
-  // }
-
-
   //====================
 
 }

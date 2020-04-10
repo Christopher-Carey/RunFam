@@ -47,17 +47,12 @@ export class RegisterComponent implements OnInit {
     console.log(this.errors.password)
  
     for(let x in this.regForm.controls){
-      console.log(x)
-      console.log(this.regForm.controls[x].value)
       if(this.regForm.controls[x].value == null){
         this.errors[x] = "Please enter Field"
       }
     }
     if(this.regForm.controls.password.value != this.regForm.controls.con_password.value){
-
       this.errors.password = "Passwords Don't Match"
-      console.log(this.errors.password)
-
     }else{
       var password = this.regForm.controls.password.value
       this.hashed = bcrypt.hashSync(password, 10);    
@@ -70,7 +65,6 @@ export class RegisterComponent implements OnInit {
     this.regForm.controls.password.setValue(this.hashed)
     let observable = this._apiService.createApi(this.regForm.value);
     observable.subscribe(results => {
-      console.log(results)
       this.appComp.user = results['results']
       this.appComp.loggedIn = true
       // console.log("yay",results)
