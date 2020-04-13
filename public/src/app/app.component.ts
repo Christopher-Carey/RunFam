@@ -10,6 +10,8 @@ import { ApiService } from './api.service'
 export class AppComponent implements OnInit {
   loggedIn = false
   user;
+  showLogin = true
+  showReg = false
 
   constructor(
     private _apiService: ApiService,

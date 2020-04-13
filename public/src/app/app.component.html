@@ -19,16 +19,11 @@
             </ul>
           </nav>
     </div>
-    <div class="row">
-        <div class="col animated fadeInLeft">
-            <app-login *ngIf="loggedIn == false" ></app-login>
 
-        </div>
-        <div class="col animated fadeInRight">
-            <app-register *ngIf="loggedIn == false" ></app-register>
+      <app-login *ngIf="loggedIn == false && showLogin == true" ></app-login>
 
-        </div>
-    </div>
+      <app-register *ngIf="loggedIn == false && showReg == true" ></app-register>
+
     <app-user-dash *ngIf="loggedIn == true"></app-user-dash>
     <app-leader></app-leader>
     

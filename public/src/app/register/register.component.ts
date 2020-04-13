@@ -76,6 +76,10 @@ export class RegisterComponent implements OnInit {
     this.regForm.controls.con_password.setValue('')
     this.regForm.controls.goal.setValue('')
   }
+  showLogin(){
+    this.appComp.showLogin = true
+    this.appComp.showReg = false
+  }
 
 //======================
 

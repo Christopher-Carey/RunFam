@@ -53,6 +53,10 @@ export class LoginComponent implements OnInit{
       }
     })
   }
+  showReg(){
+    this.appComp.showReg = true
+    this.appComp.showLogin = false
+  }
   //=====================
 
 }

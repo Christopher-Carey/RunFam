@@ -8,5 +8,6 @@ const UserSchema = new mongoose.Schema({
     goal:Number,
     distance: Array,
     totalDist:Number,
+    runnerType:String
 })
 mongoose.model('user', UserSchema);

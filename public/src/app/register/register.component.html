@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container animated fadeInRight">
     <div class="card">
         <h3 class="card-header">Register</h3>
         <form [formGroup]="regForm" (ngSubmit)="RegUser()">
@@ -25,5 +25,6 @@
 
             <input class="btn btn-dark" value="Register" type="submit">
         </form>
+        <a href="#" (click)="showLogin()">Already have an account?</a>
     </div>
 </div>
