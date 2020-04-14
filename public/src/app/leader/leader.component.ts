@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../api.service'
+import { AppComponent } from '../app.component';
+
 
 
 @Component({
@@ -11,6 +13,8 @@ export class LeaderComponent implements OnInit {
 
   constructor(
     private _apiService: ApiService,
+    private appComp: AppComponent,
+
   ) { }
 
 //======Variables======
@@ -45,8 +49,14 @@ walkers;
     observable.subscribe(results => {
       console.log("yay",results)
       this.runner = results['results']
+      console.log(this.runner)
+
     })
   }
+  get(){
+    this.ngOnInit()
+  }
+
  
 
 }

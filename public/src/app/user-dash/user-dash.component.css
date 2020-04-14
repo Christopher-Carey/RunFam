@@ -1,5 +1,6 @@
 .card{
     padding: 20px;
+    margin-top: 20px;
 }
 .addform{
     margin-top: 20px;
@@ -9,4 +10,36 @@
 .btn{
     margin-top: 20px;
     background-color: #DE532C;
+    margin-left: 20px;
+    border: none;
+}
+.card-header{
+    background-color: rgba(86, 123, 151, 0.2);
+
+}
+@media (min-width: 576px){
+    .lead-dialog {
+        max-width: 801px;
+    }
+
+}
+
+.navbar-dark{
+    background-color: rgba(86, 123, 151, 0.2);
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: rgb(86, 123, 151);
+    font-size: 20px;
+    /* margin-left: 265px; */
+}
+
+.navbar-dark .navbar-brand {
+    color: rgb(86, 123, 151);
+    font-size: 20px;
+    font-weight: bolder;
+
+}
+.navbar-nav{
+    margin-left: 265px;
 }

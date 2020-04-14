@@ -26,7 +26,7 @@ import { LeaderComponent } from './leader/leader.component';
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [ApiService,LoginComponent,AppComponent,UserDashComponent],
+  providers: [ApiService,LoginComponent,AppComponent,UserDashComponent,LeaderComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

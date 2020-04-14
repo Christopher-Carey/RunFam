@@ -3,6 +3,8 @@ import { Chart } from 'chart.js'
 import { ApiService } from '../api.service'
 import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
 import { AppComponent } from '../app.component';
+import { LeaderComponent } from '../leader/leader.component';
+
 import { createWorker } from 'tesseract.js';
 
 
@@ -25,6 +27,7 @@ export class UserDashComponent implements OnInit {
   TextArry: any;
   File;
   base;
+  showleader = false
   //====================
 
 
@@ -32,6 +35,8 @@ export class UserDashComponent implements OnInit {
     private _apiService: ApiService,
     private formBuilder: FormBuilder,
     private appComp: AppComponent,
+    private leadComp: LeaderComponent,
+
   ) { }
 
   ngOnInit() {
@@ -74,6 +79,7 @@ export class UserDashComponent implements OnInit {
 
   //======Methods========
   addMiles() {
+    console.log(this.leadComp.runner)
     this.totalDist = 0
     this.user.distance.push([this.milesForm.controls.date.value, this.milesForm.controls.miles.value, this.base])
     for (let i = 0; i < this.user.distance.length; i++) {
@@ -83,7 +89,8 @@ export class UserDashComponent implements OnInit {
 
     let observable = this._apiService.updateApi(this.user);
     observable.subscribe(results => {
-      Chart.update()
+      this.leadComp.get()
+
     })
   }
 
@@ -98,17 +105,18 @@ export class UserDashComponent implements OnInit {
     // console.log(event)
   }
 
-  test() {
+  ReadImg() {
     this.spinner = true
     const worker = createWorker({
       // logger: m => console.log(m)
     });
-
     (async () => {
       await worker.load();
       await worker.loadLanguage('eng');
       await worker.initialize('eng');
       const { data: { text } } = await worker.recognize(this.File);
+
+      // ================ This is a mess
       this.TextOutput = text
       this.TextArry = text.split(" ")
       // console.log(this.TextArry)
@@ -122,12 +130,12 @@ export class UserDashComponent implements OnInit {
       // console.log(this.TextArry[this.TextArry.indexOf("HEART") + 2])
 
       // console.log(text);
+      // =============================
+
       await worker.terminate();
       this.spinner = false
 
     })();
-
-
   }
   getBase64(file) {
     return new Promise((resolve, reject) => {
@@ -136,6 +144,35 @@ export class UserDashComponent implements OnInit {
       reader.onload = () => resolve(reader.result);
       reader.onerror = error => reject(error);
     });
+  }
+  deleteEntry(entry){
+    var index = this.user.distance.indexOf(entry)
+    this.user.distance.splice(index,1)
+    this.totalDist = 0
+    for (let i = 0; i < this.user.distance.length; i++) {
+      this.totalDist += this.user.distance[i][1]
+    }
+    this.user.totalDist = this.totalDist
+    let observable = this._apiService.updateApi(this.user);
+    observable.subscribe(results => {
+      Chart.update()
+    })
+  }
+
+  show(id){
+    var dialog= <HTMLDivElement>document.getElementById(id);
+    dialog.className = "modal show"
+    dialog.style.display = "block"
+    console.log(dialog)
+  }
+  close(id){
+    var dialog= <HTMLDivElement>document.getElementById(id);
+    dialog.className = "modal"
+    dialog.style.display = "none"
+    console.log(dialog)
+  }
+  showLeader(){
+    this.showleader = true
   }
   //====================
 
