@@ -27,6 +27,7 @@ walkers;
     this.getApisWalker()
     this.getApisRunner()
   }
+  // =========== Methods ==========
    getApisWalker(){
     let observable = this._apiService.getApisWalk();
     observable.subscribe(results => {
@@ -43,4 +44,5 @@ walkers;
 
     })
   }
+  // ===================================
 }

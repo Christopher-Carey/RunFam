@@ -46,8 +46,7 @@ export class RegisterComponent implements OnInit {
   }
   //======Methods========
   RegUser(){   
-    console.log(this.errors.password)
- 
+    // console.log(this.errors.password)
     for(let x in this.regForm.controls){
       if(this.regForm.controls[x].value == null){
         this.errors[x] = "Please enter Field"
@@ -60,9 +59,7 @@ export class RegisterComponent implements OnInit {
       this.hashed = bcrypt.hashSync(password, 10);    
       this.createUser()
     }
-
   }
-
   createUser(){   
     this.regForm.controls.password.setValue(this.hashed)
     let observable = this._apiService.createApi(this.regForm.value);
@@ -77,7 +74,6 @@ export class RegisterComponent implements OnInit {
     this.regForm.controls.password.setValue('')
     this.regForm.controls.con_password.setValue('')
     this.regForm.controls.goal.setValue('')
-    
   }
   showLogin(){
     this.appComp.showLogin = true
