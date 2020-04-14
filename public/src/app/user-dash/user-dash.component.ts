@@ -16,7 +16,7 @@ import { createWorker } from 'tesseract.js';
 export class UserDashComponent implements OnInit {
 
   //======Variables======
-  Chart = [];
+  Chart = Chart;
   user;
   totalDist = 0
   distLeft;
@@ -36,7 +36,6 @@ export class UserDashComponent implements OnInit {
     private formBuilder: FormBuilder,
     private appComp: AppComponent,
     private leadComp: LeaderComponent,
-
   ) { }
 
   ngOnInit() {
@@ -89,8 +88,9 @@ export class UserDashComponent implements OnInit {
 
     let observable = this._apiService.updateApi(this.user);
     observable.subscribe(results => {
-      this.leadComp.get()
-
+      this.Chart.data.datasets[0].data = [this.distLeft, this.totalDist]
+      this.Chart.update();
+      this.leadComp.ngOnInit()
     })
   }
 
@@ -155,7 +155,8 @@ export class UserDashComponent implements OnInit {
     this.user.totalDist = this.totalDist
     let observable = this._apiService.updateApi(this.user);
     observable.subscribe(results => {
-      Chart.update()
+      this.Chart.data.datasets[0].data = [this.distLeft, this.totalDist]
+      this.Chart.update();
     })
   }
 
@@ -174,6 +175,7 @@ export class UserDashComponent implements OnInit {
   showLeader(){
     this.showleader = true
   }
+
   //====================
 
 }

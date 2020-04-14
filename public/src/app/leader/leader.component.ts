@@ -18,25 +18,15 @@ export class LeaderComponent implements OnInit {
   ) { }
 
 //======Variables======
-allUsers;
 runner;
 walkers;
 //=====================
 
 
   ngOnInit() {
-    // this.getApisFromService()
     this.getApisWalker()
     this.getApisRunner()
   }
-
-  //  getApisFromService(){
-  //   let observable = this._apiService.getApis();
-  //   observable.subscribe(results => {
-  //     // console.log("yay",results)
-  //     this.allUsers = results['results']
-  //   })
-  // }
    getApisWalker(){
     let observable = this._apiService.getApisWalk();
     observable.subscribe(results => {
@@ -53,10 +43,4 @@ walkers;
 
     })
   }
-  get(){
-    this.ngOnInit()
-  }
-
- 
-
 }
