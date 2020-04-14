@@ -9,6 +9,12 @@ export class ApiService {
   getApis(){
     return this._http.get('/api');
   }
+  getApisWalk(){
+    return this._http.get('/api/walk');
+  }
+  getApisRun(){
+    return this._http.get('/api/run');
+  }
   getApi(id){
     return this._http.get(`/api/user/${id}`,id);
   }

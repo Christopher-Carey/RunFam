@@ -27,7 +27,8 @@ export class RegisterComponent implements OnInit {
     password: "",
     con_password: "",
     gender: "",
-    goal:""
+    goal:"",
+    runnerType:""
 
   }
 //=====================
@@ -39,7 +40,8 @@ export class RegisterComponent implements OnInit {
       password: new FormControl(),
       con_password: new FormControl(),
       gender: new FormControl(),
-      goal:new FormControl()
+      goal:new FormControl(),
+      runnerType:new FormControl()
     });
   }
   //======Methods========
@@ -75,6 +77,7 @@ export class RegisterComponent implements OnInit {
     this.regForm.controls.password.setValue('')
     this.regForm.controls.con_password.setValue('')
     this.regForm.controls.goal.setValue('')
+    
   }
   showLogin(){
     this.appComp.showLogin = true

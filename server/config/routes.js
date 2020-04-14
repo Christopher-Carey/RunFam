@@ -2,7 +2,9 @@ const user = require('../controllers/users.js');
 //----^^-----------------------------------^^Change Controller
 module.exports = function (app) {
 
-    app.get("/api", (request, response) => user.index(request,response));  
+    app.get("/api", (request, response) => user.index(request,response)); 
+    app.get("/api/run", (request, response) => user.indexrun(request,response)); 
+    app.get("/api/walk", (request, response) => user.indexwalk(request,response)); 
 
     app.get("/api/user/:id", (request, response) => user.show(request,response));
 

@@ -10,6 +10,16 @@ const mongoose = require('mongoose'),
                 .then(users => response.json({ results: users }))
                 .catch(err => response.json({ error: err.error }))
         },
+        indexwalk: function (request, response) {
+            user.find({runnerType: "power walker"}).sort("-totalDist")
+                .then(users => response.json({ results: users }))
+                .catch(err => response.json({ error: err.error }))
+        },
+        indexrun: function (request, response) {
+            user.find({runnerType:"runner"}).sort("-totalDist")
+                .then(users => response.json({ results: users }))
+                .catch(err => response.json({ error: err.error }))
+        },
         show: function (request, response) {
             user.findOne({email: request.params.id })
                 .then(user => response.json({ results: user }))

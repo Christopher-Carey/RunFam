@@ -22,6 +22,12 @@
             <label for="">Distance Goal</label>
             <label style="color: red; margin-left: 40px;" *ngIf="errors.goal">{{errors.goal}}</label>
             <input class="form-control" formControlName="goal" type="text">
+            <label for="">Runner Type</label>
+            <label style="color: red; margin-left: 40px;" *ngIf="errors.gender">{{errors.gender}}</label>
+            <select class="form-control" formControlName="runnerType" >
+                <option value="runner">Runner</option>
+                <option value="power walker">Power Walker</option>
+            </select>
 
             <input class="btn btn-dark" value="Register" type="submit">
         </form>

@@ -1,6 +1,24 @@
-table{
+/* table{
     margin-top: 20px;
-}
+} */
 .table-dark{
     background-color: #567B97;
+}
+.card-header{
+    margin-top: 20px;
+
+}
+.title{
+    margin-top: 20px;
+    background-color: rgba(222, 83, 44, 0.2);
+    text-align: center;
+
+}
+
+.tableTile{
+    background-color: rgba(86, 123, 151, 0.2);
+    text-align: center;
+
+
+
 }
