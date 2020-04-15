@@ -3,29 +3,30 @@ import { ApiService } from '../api.service'
 import { AppComponent } from '../app.component';
 
 
-
 @Component({
-  selector: 'app-leader',
-  templateUrl: './leader.component.html',
-  styleUrls: ['./leader.component.css']
+  selector: 'app-leader-dash',
+  templateUrl: './leader-dash.component.html',
+  styleUrls: ['./leader-dash.component.css']
 })
-export class LeaderComponent implements OnInit {
+export class LeaderDashComponent implements OnInit {
 
   constructor(
     private _apiService: ApiService,
     private appComp: AppComponent,
 
-  ) { }
+  ) {
+    
+   }
 
-//======Variables======
+ //======Variables======
 runner;
 walkers;
-user;
+// user;
 //=====================
 
 
   ngOnInit() {
-    this.user = this.appComp.user
+    // this.user = this.appComp.user
     console.log("dsdsdsds "+this.user)
     this.getApisWalker()
     this.getApisRunner()

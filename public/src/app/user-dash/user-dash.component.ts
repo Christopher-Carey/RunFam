@@ -175,6 +175,12 @@ export class UserDashComponent implements OnInit {
   showLeader(){
     this.showleader = true
   }
+  showlead(){
+
+    this.appComp.showLeader = true
+    this.appComp.userDash = false
+
+  }
 
   //====================
 

@@ -10,6 +10,7 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { UserDashComponent } from './user-dash/user-dash.component';
 import { LeaderComponent } from './leader/leader.component';
+import { LeaderDashComponent } from './leader-dash/leader-dash.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { LeaderComponent } from './leader/leader.component';
     LoginComponent,
     RegisterComponent,
     UserDashComponent,
-    LeaderComponent
+    LeaderComponent,
+    LeaderDashComponent
   ],
   imports: [
     BrowserModule,

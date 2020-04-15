@@ -66,6 +66,7 @@ export class RegisterComponent implements OnInit {
     observable.subscribe(results => {
       this.appComp.user = results['results']
       this.appComp.loggedIn = true
+      this.appComp.userDash =true
       // console.log("yay",results)
     })
     this.regForm.controls.name.setValue('')

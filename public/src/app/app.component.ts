@@ -12,6 +12,8 @@ export class AppComponent implements OnInit {
   user;
   showLogin = true
   showReg = false
+  showLeader = false
+  userDash = false
 
   constructor(
     private _apiService: ApiService,

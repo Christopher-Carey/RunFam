@@ -1,3 +1,6 @@
+*{
+    vertical-align: top;
+}
 .table-dark{
     background-color: #567B97;
 }
@@ -39,4 +42,17 @@
 }
 .navbar-nav{
     margin-left: 265px;
+}
+.col-8{
+    display: inline-block    
+    
+}
+.col-4{
+    display: inline-block
+}
+.card{
+    margin-top: 20px;
+}
+img{
+    height: 290px;
 }

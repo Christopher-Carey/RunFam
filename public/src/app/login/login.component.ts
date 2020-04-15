@@ -47,6 +47,7 @@ export class LoginComponent implements OnInit{
         this.errors.email = "No such User..Need to Register?"
       }else{
         this.appComp.loggedIn = bcrypt.compareSync(password, this.user.password);
+        this.appComp.userDash = true
         if(this.appComp.loggedIn == false){
           this.errors.password= "Wrong Password"
         }
