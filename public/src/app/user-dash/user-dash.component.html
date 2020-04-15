@@ -8,9 +8,6 @@
       <li class="nav-item">
         <a class="nav-link" data-toggle="modal" data-target="#myModal" href="#">Add Miles | </a>
       </li>
-      <!-- <li class="nav-item">
-        <a class="nav-link" data-toggle="modal" data-target="#LeaderModal" href="#">Show Leaderboard | </a>
-      </li> -->
       <li class="nav-item">
         <a class="nav-link" id="showbtn" (click)="showlead()" href="#">Show Leaderboard | </a>
       </li>
@@ -18,7 +15,7 @@
         <a class="nav-link" href="/">Logout | </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Edit Goal</a>
+        <a class="nav-link" data-toggle="modal" data-target="#GoalModal" href="#">Edit Goal</a>
       </li>
     </ul>
   </div>
@@ -97,15 +94,19 @@
   </div>
 </div>
 
-<!-- === Leaderboard Modal === -->
-<div class="modal" id="LeaderModal">
+<!-- === Edit Goal Modal === -->
+<div class="modal" id="GoalModal">
   <div class="modal-dialog lead-dialog">
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
       </div>
       <div class="modal-body">
-        <app-leader></app-leader>
+        <form [formGroup]="milesForm" (ngSubmit)='updateGoal()'>
+          <label for="">Edit Goal</label>
+          <input class="form-control" formControlName='goal' type="number">
+          <input class="btn btn-dark " type="submit" value="Save">
+        </form>
       </div>
     </div>
   </div>

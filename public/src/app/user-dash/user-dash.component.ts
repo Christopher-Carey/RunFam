@@ -43,9 +43,11 @@ export class UserDashComponent implements OnInit {
     this.milesForm = new FormGroup({
       date: new FormControl(),
       miles: new FormControl(),
+      goal: new FormControl()
     });
 
     this.user = this.appComp.user
+    this.milesForm.controls.goal.setValue(this.user.goal)
 
     for (let i = 0; i < this.user.distance.length; i++) {
       this.totalDist += this.user.distance[i][1]
@@ -179,6 +181,17 @@ export class UserDashComponent implements OnInit {
 
     this.appComp.showLeader = true
     this.appComp.userDash = false
+
+  }
+  updateGoal(){
+    this.user.goal = this.milesForm.controls.goal.value
+    this.distLeft = this.user.goal - this.totalDist
+
+    let observable = this._apiService.updateApi(this.user);
+    observable.subscribe(results => {
+      this.Chart.data.datasets[0].data = [this.distLeft, this.totalDist]
+      this.Chart.update();
+    })
 
   }
 

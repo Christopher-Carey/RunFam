@@ -15,14 +15,8 @@
 }
 .card-header{
     background-color: rgba(86, 123, 151, 0.2);
-
 }
-@media (min-width: 576px){
-    .lead-dialog {
-        max-width: 801px;
-    }
 
-}
 
 .navbar-dark{
     background-color: rgba(86, 123, 151, 0.2);
