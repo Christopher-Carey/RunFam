@@ -18,7 +18,7 @@ export class UserDashComponent implements OnInit {
   //======Variables======
   Chart = Chart;
   user;
-  totalDist = 0
+  totalDist : any;
   distLeft;
   milesForm: FormGroup
   arr;
@@ -48,10 +48,13 @@ export class UserDashComponent implements OnInit {
 
     this.user = this.appComp.user
     this.milesForm.controls.goal.setValue(this.user.goal)
-
+    var dist = 0
     for (let i = 0; i < this.user.distance.length; i++) {
-      this.totalDist += this.user.distance[i][1]
+      dist += this.user.distance[i][1]
+      
+      // this.totalDist += this.user.distance[i][1]
     }
+    this.totalDist = dist.toFixed(2)
     this.distLeft = this.user.goal - this.totalDist
 
     this.Chart = new Chart('chart', {
@@ -83,10 +86,23 @@ export class UserDashComponent implements OnInit {
     console.log(this.leadComp.runner)
     this.totalDist = 0
     this.user.distance.push([this.milesForm.controls.date.value, this.milesForm.controls.miles.value, this.base])
+
+    // =================
+    var dist = 0
     for (let i = 0; i < this.user.distance.length; i++) {
-      this.totalDist += this.user.distance[i][1]
+      dist += this.user.distance[i][1]
+      
+      // this.totalDist += this.user.distance[i][1]
     }
+    this.totalDist = dist.toFixed(2)
     this.user.totalDist = this.totalDist
+
+
+    // =================
+    // for (let i = 0; i < this.user.distance.length; i++) {
+    //   this.totalDist += this.user.distance[i][1]
+    // }
+    // this.user.totalDist = this.totalDist
 
     let observable = this._apiService.updateApi(this.user);
     observable.subscribe(results => {

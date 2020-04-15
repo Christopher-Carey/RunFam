@@ -1,7 +1,6 @@
 <div class="container animated fadeInLeft">
     <div class="card">
         <h1>{{loginForm.controls.email.value}}</h1>
-        <h4>{{loggedIn}}</h4>
 
         <h3 class="card-header">Login</h3>
         <form [formGroup]="loginForm" (ngSubmit)="ApiFromService(loginForm.controls.email.value)">

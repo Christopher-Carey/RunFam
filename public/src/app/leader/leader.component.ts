@@ -26,7 +26,6 @@ user;
 
   ngOnInit() {
     this.user = this.appComp.user
-    console.log("dsdsdsds "+this.user)
     this.getApisWalker()
     this.getApisRunner()
   }
@@ -34,16 +33,16 @@ user;
    getApisWalker(){
     let observable = this._apiService.getApisWalk();
     observable.subscribe(results => {
-      console.log("yay",results)
+      // console.log("yay",results)
       this.walkers = results['results']
     })
   }
    getApisRunner(){
     let observable = this._apiService.getApisRun();
     observable.subscribe(results => {
-      console.log("yay",results)
+      // console.log("yay",results)
       this.runner = results['results']
-      console.log(this.runner)
+      // console.log(this.runner)
 
     })
   }
