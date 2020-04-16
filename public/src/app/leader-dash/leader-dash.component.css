@@ -72,3 +72,15 @@ img{
     margin: auto;
 }
 
+@media only screen and (max-width: 600px) {
+    .col-8{
+        display: block;
+        max-width: 100%;
+        
+    }
+    .col-4{
+        display: block;
+        max-width: 100%;
+
+    }
+  }

@@ -37,3 +37,11 @@
 .navbar-nav{
     margin-left: 265px;
 }
+@media only screen and (max-width: 600px) {
+    #chart {
+        margin-bottom: 100px;
+    }
+    .navbar-nav{
+        margin-left: 0;
+    }
+  }

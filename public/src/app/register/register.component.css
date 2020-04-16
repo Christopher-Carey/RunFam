@@ -11,3 +11,8 @@
 .card-header{
     background-color: rgba(86, 123, 151, 0.2);
 }
+@media only screen and (max-width: 600px) {
+    .card {
+        width: 100%;    
+    }
+  }
