@@ -1,6 +1,5 @@
 <div class="container animated fadeInLeft">
     <div class="card">
-        <h1>{{loginForm.controls.email.value}}</h1>
 
         <h3 class="card-header">Login</h3>
         <form [formGroup]="loginForm" (ngSubmit)="ApiFromService(loginForm.controls.email.value)">
@@ -9,7 +8,7 @@
             <input class="form-control" formControlName="email" type="text">
             <label for="">Password</label>
             <label style="color: red; margin-left: 40px;" *ngIf="errors.password">{{errors.password}}</label>
-            <input class="form-control" formControlName="password" type="text">
+            <input class="form-control" formControlName="password" type="password">
             <input class="btn btn-dark" value="Login" type="submit">
         </form>
         <a href="#" (click)="showReg()">Need An Account?</a>
