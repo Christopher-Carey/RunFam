@@ -28,7 +28,8 @@ export class RegisterComponent implements OnInit {
     con_password: "",
     gender: "",
     goal:"",
-    runnerType:""
+    runnerType:"",
+    error:false
 
   }
 //=====================
@@ -50,14 +51,24 @@ export class RegisterComponent implements OnInit {
     for(let x in this.regForm.controls){
       if(this.regForm.controls[x].value == null){
         this.errors[x] = "Please enter Field"
+        this.errors.error = true
       }
     }
+    if(this.regForm.controls.password.value.length < 8){
+      this.errors.password = "Passwords needs 8+ "
+      this.errors.error = true
+    }
+
     if(this.regForm.controls.password.value != this.regForm.controls.con_password.value){
       this.errors.password = "Passwords Don't Match"
-    }else{
+      this.errors.error = true
+    }
+
+    if(this.errors.error == false){
       var password = this.regForm.controls.password.value
       this.hashed = bcrypt.hashSync(password, 10);    
       this.createUser()
+
     }
   }
   createUser(){   

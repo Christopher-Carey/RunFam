@@ -109,6 +109,8 @@ export class UserDashComponent implements OnInit {
       this.Chart.data.datasets[0].data = [this.distLeft, this.totalDist]
       this.Chart.update();
       this.leadComp.ngOnInit()
+      this.File = ""
+      this.base = ""
     })
   }
 
