@@ -7,12 +7,14 @@
         <tr>
           <th>First name</th>
           <th>Total Distance</th>
+          <th>Latest Upload</th>
         </tr>
       </thead>
       <tbody>
         <tr *ngFor="let x of runner">
           <td>{{x.name}}</td>
           <td>{{x.totalDist}} Miles</td>
+          <td><img style="width: 40px;" [src]="x.distance[x.distance.length-1][2]" alt=""></td>
         </tr>
       </tbody>
     </table>

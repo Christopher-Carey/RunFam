@@ -1,5 +1,6 @@
 <nav class="navbar navbar-expand-md navbar-dark">
-  <a class="navbar-brand" href="#">Welcome {{user.name}}</a>
+  <h3 class="navbar-brand">Welcome {{user.name}}</h3>
+  <!-- <a class="navbar-brand" href="#">Welcome {{user.name}}</a> -->
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -73,13 +74,13 @@
           <form [formGroup]="milesForm" (ngSubmit)='addMiles()'>
             <label for="">Distance</label>
             <input class="form-control" formControlName='miles' type="number">
-            <label for="">date</label>
+            <label for="">Date</label>
             <input class="form-control" formControlName='date' type="date">
             <input *ngIf="File" class="btn btn-dark" type="submit">
           </form>
           <input class="btn btn-dark" type="file" (change)="Upload($event)">
           <form (submit)="ReadImg()">
-            <button *ngIf="File" class="btn btn-dark" type="submit">
+            <button *ngIf="File" class="btn btn-dark read-btn" type="submit">
               <div *ngIf="spinner" class="spinner-border spinner-border-sm"></div>
               <span *ngIf="!spinner">Read Image</span>
             </button>
