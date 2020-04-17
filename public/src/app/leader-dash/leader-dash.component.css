@@ -64,6 +64,10 @@
 .modal{
     overflow-y: auto;
 }
+.arrow{
+    width: 36px;
+    cursor: pointer;
+}
 /* img{
     height: 290px;
     position: absolute;
