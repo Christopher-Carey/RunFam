@@ -48,6 +48,9 @@ export class RegisterComponent implements OnInit {
   //======Methods========
   RegUser(){  
     this.regForm.controls.totalDist.setValue("0")
+    console.log(this.regForm.controls.name.value)
+    
+
     this.errors={
       name:"", 
       email: "",
@@ -59,7 +62,7 @@ export class RegisterComponent implements OnInit {
       error:false
     }
     for(let x in this.regForm.controls){
-      if(this.regForm.controls[x].value == null){
+      if(this.regForm.controls[x].value == null || this.regForm.controls[x].value == "" ){
         this.errors[x] = "Please enter Field"
         this.errors.error = true
         console.log("1")
