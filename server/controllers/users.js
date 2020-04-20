@@ -43,7 +43,7 @@ const mongoose = require('mongoose'),
         //         .catch(err => response.json({ error: err.error }))
         // }
         update: function (request, response) {
-            user.updateOne({email:request.body.email}, request.body)
+            user.updateOne({_id:request.body._id}, request.body)
                 .then(result => response.json({ results: result }))
                 .catch(err => response.json({ error: err.error }))
         }

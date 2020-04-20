@@ -106,6 +106,7 @@ export class UserDashComponent implements OnInit {
 
     let observable = this._apiService.updateApi(this.user);
     observable.subscribe(results => {
+      
       this.Chart.data.datasets[0].data = [this.distLeft, this.totalDist]
       this.Chart.update();
       this.leadComp.ngOnInit()
