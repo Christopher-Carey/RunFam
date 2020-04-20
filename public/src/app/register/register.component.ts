@@ -30,7 +30,6 @@ export class RegisterComponent implements OnInit {
     goal:"",
     runnerType:"",
     error:false
-
   }
 //=====================
 
@@ -42,33 +41,51 @@ export class RegisterComponent implements OnInit {
       con_password: new FormControl(),
       gender: new FormControl(),
       goal:new FormControl(),
-      runnerType:new FormControl()
+      runnerType:new FormControl(),
+      totalDist:new FormControl(),
     });
   }
   //======Methods========
-  RegUser(){   
-    // console.log(this.errors.password)
+  RegUser(){  
+    this.regForm.controls.totalDist.setValue("0")
+    this.errors={
+      name:"", 
+      email: "",
+      password: "",
+      con_password: "",
+      gender: "",
+      goal:"",
+      runnerType:"",
+      error:false
+    }
     for(let x in this.regForm.controls){
       if(this.regForm.controls[x].value == null){
         this.errors[x] = "Please enter Field"
         this.errors.error = true
+        console.log("1")
+        console.log(this.errors.error)
+
       }
     }
     if(this.regForm.controls.password.value.length < 8){
       this.errors.password = "Passwords needs 8+ "
       this.errors.error = true
+      console.log("2")
+
     }
 
     if(this.regForm.controls.password.value != this.regForm.controls.con_password.value){
       this.errors.password = "Passwords Don't Match"
       this.errors.error = true
+      console.log("3")
+
     }
 
     if(this.errors.error == false){
       var password = this.regForm.controls.password.value
       this.hashed = bcrypt.hashSync(password, 10);    
+      console.log("4")
       this.createUser()
-
     }
   }
   createUser(){   
