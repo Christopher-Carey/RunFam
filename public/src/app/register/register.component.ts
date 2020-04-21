@@ -73,8 +73,6 @@ export class RegisterComponent implements OnInit {
     if(this.regForm.controls.password.value.length < 8){
       this.errors.password = "Passwords needs 8+ "
       this.errors.error = true
-      console.log("2")
-
     }
 
     if(this.regForm.controls.password.value != this.regForm.controls.con_password.value){
@@ -88,10 +86,13 @@ export class RegisterComponent implements OnInit {
       var password = this.regForm.controls.password.value
       this.hashed = bcrypt.hashSync(password, 10);    
       console.log("4")
+      console.log(this.regForm.controls.email.value)
       this.createUser()
     }
   }
   createUser(){   
+    this.regForm.controls.email.setValue(this.regForm.controls.email.value.toLowerCase())
+    console.log(this.regForm.controls.email.value)
     this.regForm.controls.password.setValue(this.hashed)
     let observable = this._apiService.createApi(this.regForm.value);
     observable.subscribe(results => {
