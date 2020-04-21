@@ -26,26 +26,29 @@ user;
 
   ngOnInit() {
     this.user = this.appComp.user
-    this.getApisWalker()
     this.getApisRunner()
+    this.getApisWalker()
+
   }
   // =========== Methods ==========
-   getApisWalker(){
-    let observable = this._apiService.getApisWalk();
-    observable.subscribe(results => {
-      // console.log("yay",results)
-      this.walkers = results['results']
-    })
-  }
-   getApisRunner(){
+  getApisRunner(){
     let observable = this._apiService.getApisRun();
     observable.subscribe(results => {
-      // console.log("yay",results)
+      console.log("yay",results)
       this.runner = results['results']
       // console.log(this.runner)
 
+
     })
   }
+   getApisWalker(){
+    let observable = this._apiService.getApisWalk();
+    observable.subscribe(results => {
+      console.log("yay",results)
+      this.walkers = results['results']
+    })
+  }
+
   showdash(){
     this.appComp.showLeader = false
     this.appComp.userDash = true
