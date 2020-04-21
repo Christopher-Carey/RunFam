@@ -48,9 +48,6 @@ export class RegisterComponent implements OnInit {
   //======Methods========
   RegUser(){  
     this.regForm.controls.totalDist.setValue("0")
-    console.log(this.regForm.controls.name.value)
-    
-
     this.errors={
       name:"", 
       email: "",
@@ -65,9 +62,6 @@ export class RegisterComponent implements OnInit {
       if(this.regForm.controls[x].value == null || this.regForm.controls[x].value == "" ){
         this.errors[x] = "Please enter Field"
         this.errors.error = true
-        console.log("1")
-        console.log(this.errors.error)
-
       }
     }
     if(this.regForm.controls.password.value.length < 8){
@@ -78,21 +72,16 @@ export class RegisterComponent implements OnInit {
     if(this.regForm.controls.password.value != this.regForm.controls.con_password.value){
       this.errors.password = "Passwords Don't Match"
       this.errors.error = true
-      console.log("3")
-
     }
 
     if(this.errors.error == false){
       var password = this.regForm.controls.password.value
       this.hashed = bcrypt.hashSync(password, 10);    
-      console.log("4")
-      console.log(this.regForm.controls.email.value)
       this.createUser()
     }
   }
   createUser(){   
     this.regForm.controls.email.setValue(this.regForm.controls.email.value.toLowerCase())
-    console.log(this.regForm.controls.email.value)
     this.regForm.controls.password.setValue(this.hashed)
     let observable = this._apiService.createApi(this.regForm.value);
     observable.subscribe(results => {

@@ -83,7 +83,6 @@ export class UserDashComponent implements OnInit {
 
   //======Methods========
   addMiles() {
-    console.log(this.leadComp.runner)
     this.totalDist = 0
     this.user.distance.push([this.milesForm.controls.date.value, this.milesForm.controls.miles.value, this.base])
 
@@ -185,13 +184,13 @@ export class UserDashComponent implements OnInit {
     var dialog= <HTMLDivElement>document.getElementById(id);
     dialog.className = "modal show"
     dialog.style.display = "block"
-    console.log(dialog)
+    // console.log(dialog)
   }
   close(id){
     var dialog= <HTMLDivElement>document.getElementById(id);
     dialog.className = "modal"
     dialog.style.display = "none"
-    console.log(dialog)
+    // console.log(dialog)
   }
   showLeader(){
     this.showleader = true

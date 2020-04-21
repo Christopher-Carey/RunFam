@@ -54,13 +54,13 @@ user;
     var dialog= <HTMLDivElement>document.getElementById(id);
     dialog.className = "modal show"
     dialog.style.display = "block"
-    console.log(dialog)
+    // console.log(dialog)
   }
   close(id){
     var dialog= <HTMLDivElement>document.getElementById(id);
     dialog.className = "modal"
     dialog.style.display = "none"
-    console.log(dialog)
+    // console.log(dialog)
   }
   // ===================================
 }

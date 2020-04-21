@@ -31,7 +31,7 @@
         <tr *ngFor="let x of runner">
           <td>{{x.name}}</td>
           <td>{{x.totalDist}} Miles</td>
-          <td><button type="button" data-toggle="modal" (click)="show(x.distance[0][2])">
+          <td *ngIf="x.distance.length >= 1"><button type="button" data-toggle="modal" (click)="show(x.distance[0][2])">
             <img style="width: 40px;" [src]="x.distance[x.distance.length-1][2]" alt="">
           </button></td>
           <div class="modal" [attr.id]="x.distance[0][2]">
@@ -65,7 +65,7 @@
         <tr *ngFor="let x of walkers">
           <td>{{x.name}}</td>
           <td>{{x.totalDist}} Miles</td>
-          <td><button type="button" data-toggle="modal" (click)="show(x.distance[0][2])">
+          <td *ngIf="x.distance.length >= 1"><button type="button" data-toggle="modal" (click)="show(x.distance[0][2])">
             <img style="width: 40px;" [src]="x.distance[x.distance.length-1][2]" alt="">
           </button></td>
           <div class="modal" [attr.id]="x.distance[0][2]">
@@ -86,7 +86,6 @@
     <!-- ========================== -->
   </div>
   <div class="col-4">
- 
     <div class="card">
       <h3 class="card-header">This Months Challenge</h3>
       <p>This month the top distance both in runners and 

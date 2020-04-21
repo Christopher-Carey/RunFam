@@ -37,7 +37,6 @@ export class LoginComponent implements OnInit{
 
   //======Methods========
   ApiFromService(id){
-    console.log(id)
     var password = this.loginForm.controls.password.value
     let observable = this._apiService.getApi(id);
     observable.subscribe(results => {

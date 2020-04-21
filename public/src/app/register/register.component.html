@@ -2,6 +2,7 @@
     <div class="card">
         <h3 class="card-header">Register</h3>
         <form [formGroup]="regForm" (ngSubmit)="RegUser()">
+            <!-- === Name -->
             <div class="row">
                 <div class="col">
                     <label for="">Name</label>
@@ -11,6 +12,7 @@
                 </div>
             </div>
             <input class="form-control" formControlName="name" type="text">
+            <!-- === Email -->
             <div class="row">
                 <div class="col">
                     <label for="">Email</label>
@@ -20,6 +22,7 @@
                 </div>
             </div>
             <input class="form-control" formControlName="email" type="email">
+            <!-- === Password -->
             <div class="row">
                 <div class="col">
                     <label for="">Password</label>
@@ -29,8 +32,10 @@
                 </div>
             </div>
             <input class="form-control" formControlName="password" type="password">
+            <!-- === Confirm Password -->
             <label for="">Confirm Password</label>
             <input class="form-control" formControlName="con_password" type="password">
+            <!-- === Gender -->
             <div class="row">
                 <div class="col">
                     <label for="">Gender</label>
@@ -43,6 +48,7 @@
                 <option value="male">Male</option>
                 <option value="Female">Female</option>
             </select>
+            <!-- === Goal -->
             <div class="row">
                 <div class="col">
                     <label for="">Distance Goal</label>
@@ -52,6 +58,7 @@
                 </div>
             </div>
             <input class="form-control" formControlName="goal" type="text">
+            <!-- === Run Type -->
             <div class="row">
                 <div class="col">
                     <label for="">Runner Type</label>
@@ -64,6 +71,7 @@
                 <option value="runner">Runner</option>
                 <option value="power walker">Power Walker</option>
             </select>
+            <!-- === Submit -->
             <input class="btn btn-dark" value="Register" type="submit">
         </form>
         <a href="#" (click)="showLogin()">Already have an account?</a>

@@ -22,23 +22,18 @@ runner;
 walkers;
 user;
 //=====================
-
-
   ngOnInit() {
     this.user = this.appComp.user
     this.getApisRunner()
     this.getApisWalker()
-
   }
   // =========== Methods ==========
   getApisRunner(){
     let observable = this._apiService.getApisRun();
     observable.subscribe(results => {
-      console.log("yay",results)
+      // console.log("yay",results)
       this.runner = results['results']
       // console.log(this.runner)
-
-
     })
   }
    getApisWalker(){
@@ -47,11 +42,6 @@ user;
       console.log("yay",results)
       this.walkers = results['results']
     })
-  }
-
-  showdash(){
-    this.appComp.showLeader = false
-    this.appComp.userDash = true
   }
   // ===================================
 }
