@@ -15,6 +15,7 @@
 }
 .card-header{
     background-color: rgba(86, 123, 151, 0.2);
+    text-align: center;
 }
 .btn{
     border: none;
