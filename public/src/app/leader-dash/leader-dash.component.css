@@ -6,6 +6,7 @@
 }
 .card-header{
     background-color: rgba(86, 123, 151, 0.2);
+    text-align: center;
 
 }
 .title{
@@ -50,6 +51,7 @@
     position: relative;
     height: auto;
     padding: 20px;
+    text-align: center;
     
 }
 .modal{
@@ -59,6 +61,19 @@
     width: 36px;
     cursor: pointer;
 }
+.bounce{
+    margin-top: 20px;
+}
+.custom-toggler.navbar-toggler { 
+    border-color: rgb(86, 123, 151); 
+} 
+/* Setting the stroke to green using rgb values (0, 128, 0) */ 
+  
+.custom-toggler .navbar-toggler-icon { 
+    background-image: url( 
+"data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgb(86, 123, 151)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E"); 
+} 
+
 
 @media only screen and (max-width: 600px) {
     .col-8{
