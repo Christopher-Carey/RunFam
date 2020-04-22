@@ -13,13 +13,23 @@
         <a class="nav-link" href="/">Logout</a>
       </li>
     </ul>
-  </div>
+  </div> 
 </nav>
 <h3 class="card-header title">Leader Dashboard</h3>
-  <div class="col-8">
+  <div class="col-8" id="runner-header">
     <!-- ======= Runners =========== -->
-    <h3 class="card-header tableTile">Runners</h3>
-    <table class="table table-dark table-hover">
+    <div class="card-header tableTile">
+      <div class="row">
+        <div class="col-10">
+          <h3 class="pull-right">Runners</h3>
+        </div>
+        <div class="col-2">
+          <img class="scroll-arrow" (click)="scrollDown()" src="../assets/img/icons8-double-down-64.PNG" alt="">
+        </div>
+
+      </div>
+
+    </div>    <table class="table table-dark table-hover">
       <thead>
         <tr>
           <th>First name</th>
@@ -52,7 +62,18 @@
     <!-- ========================== -->
 
     <!-- ======= Walkers =========== -->
-    <h3 class="card-header tableTile">Power Walkers</h3>
+    <div class="card-header tableTile" id="walker-header">
+      <div class="row">
+        <div class="col-10">
+          <h3 class="pull-right">Power Walkers</h3>
+        </div>
+        <div class="col-2">
+          <img class="scroll-arrow" style="transform: rotate(180deg);"  (click)="scrollUp()" src="../assets/img/icons8-double-down-64.PNG" alt="">
+        </div>
+
+      </div>
+
+    </div>    
     <table class="table table-dark table-hover">
       <thead>
         <tr>

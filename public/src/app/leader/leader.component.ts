@@ -43,5 +43,13 @@ user;
       this.walkers = results['results']
     })
   }
+  scrollDown(){
+    var target = document.getElementById("walker-header")
+    target.scrollIntoView()
+  }
+  scrollUp(){
+    var target = document.getElementById("runner-header")
+    target.scrollIntoView()
+  }
   // ===================================
 }

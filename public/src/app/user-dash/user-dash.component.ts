@@ -74,7 +74,7 @@ export class UserDashComponent implements OnInit {
       options: {
         title: {
           text: "",
-          display: true
+          display: true,
         },
 
       }
