@@ -6,6 +6,8 @@
 e2e_test.*
 *.log
 node_modules
+/DOCS/Icons
+/DOCS/ScreenShots/Video
 
 # Include when developing application packages.
 pubspec.lock
