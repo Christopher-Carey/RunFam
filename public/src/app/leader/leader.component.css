@@ -18,6 +18,7 @@
     width: 20px;
     float: right;
     margin-top: 11px;
+    animation-duration: 3s;
 }
 @media (min-width: 576px){
     .lead-dialog {

@@ -5,7 +5,8 @@
 }
 
 img{
-    width: 40px;
+    width: 53px;
+    width: 85px;
 }
 
 .navbar-dark .navbar-nav .nav-link {
@@ -15,4 +16,7 @@ img{
 }
 .login-reg{
     background-color: tomato;
+}
+.arm{
+    animation-duration: 3s;
 }
