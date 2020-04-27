@@ -1,8 +1,20 @@
+@font-face {
+    font-family: 'lovelyFont';
+    src: url("/assets/fonts/DontMeltDripRegular-LWWG.otf") 
+
+}
+
+
 .table-dark{
     background-color: #567B97;
 }
 .card-header{
     margin-top: 20px;
+    
+}
+h3{
+    font-family: "lovelyFont";
+    font-size: 45px;
 }
 .title{
     margin-top: 20px;
