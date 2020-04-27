@@ -42,12 +42,9 @@ export class LoginComponent implements OnInit{
         this.appComp.user = results['results']
         this.appComp.loggedIn = true
         this.appComp.userDash = true
-      
       })
     }
   }
-
-
   //======Methods========
   ApiFromService(id){
     var password = this.loginForm.controls.password.value

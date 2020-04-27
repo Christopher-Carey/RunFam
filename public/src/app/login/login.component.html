@@ -9,11 +9,17 @@
             <label for="">Password</label>
             <label style="color: red; margin-left: 40px;" *ngIf="errors.password">{{errors.password}}</label>
             <input class="form-control" formControlName="password" type="password">
-            <input class="btn btn-dark" value="Login" type="submit">
-            <input type="checkbox" id="keep">            
-            <label for="">Keep Me Logged In</label>
+            <div class="row">
+                <div class="col-3">
+                    <input class="btn btn-dark" value="Login" type="submit">
+                </div>
+                <div class="col-9">
+                    <input style="display: inline-block; width: 20px; margin-top: 16px;" class="form-control" type="checkbox" id="keep">
+                    <label style="display: inline-block; vertical-align: top; margin-top: 21px;margin-left: 10px;" for="">Keep Me Logged In</label>
+                </div>
+            </div>
         </form>
-        <a href="#" (click)="showReg()">Need An Account?</a>
+        <a style="margin-top: 20px;" href="#" (click)="showReg()">Need An Account?</a>
         <a ></a>
     </div>
 </div>

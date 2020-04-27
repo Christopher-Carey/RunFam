@@ -214,6 +214,11 @@ export class UserDashComponent implements OnInit {
     })
 
   }
+  logout(){
+    localStorage.clear()
+    // location.reload();
+  }
+
   quote(){
     var quoteList = {
       1: "If you want to achieve greatness stop asking for permission. --Anonymous",
