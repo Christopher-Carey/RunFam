@@ -10,6 +10,8 @@
             <label style="color: red; margin-left: 40px;" *ngIf="errors.password">{{errors.password}}</label>
             <input class="form-control" formControlName="password" type="password">
             <input class="btn btn-dark" value="Login" type="submit">
+            <input type="checkbox" id="keep">            
+            <label for="">Keep Me Logged In</label>
         </form>
         <a href="#" (click)="showReg()">Need An Account?</a>
         <a ></a>

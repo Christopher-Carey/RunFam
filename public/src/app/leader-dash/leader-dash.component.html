@@ -44,7 +44,7 @@
           <td *ngIf="x.distance.length >= 1"><button type="button" data-toggle="modal" (click)="show(x.distance[0][2])">
             <img style="width: 40px;" [src]="x.distance[x.distance.length-1][2]" alt="">
           </button></td>
-          <div class="modal" [attr.id]="x.distance[0][2]">
+          <div *ngIf="x.distance.length >= 1" class="modal" [attr.id]="x.distance[0][2]">
             <div class="modal-dialog lead-dialog">
               <div class="modal-content">
                 <div class="modal-header">

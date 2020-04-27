@@ -32,6 +32,19 @@ export class LoginComponent implements OnInit{
       email: new FormControl(),
       password: new FormControl()
     });
+    // localStorage.clear()
+    var localStorageEmail = localStorage.getItem("Email")
+    if(localStorageEmail != null){
+      let observable = this._apiService.getApi(localStorageEmail);
+      observable.subscribe(results => {
+        // console.log("yay",results)
+        this.user = results['results']
+        this.appComp.user = results['results']
+        this.appComp.loggedIn = true
+        this.appComp.userDash = true
+      
+      })
+    }
   }
 
 
@@ -49,6 +62,11 @@ export class LoginComponent implements OnInit{
         this.appComp.loggedIn = bcrypt.compareSync(password, this.user.password);
         if (this.appComp.loggedIn == true){
           this.appComp.userDash = true
+          var CheckDom = document.getElementById("keep") as HTMLInputElement
+          CheckDom.checked
+          if(CheckDom.checked == true){
+            localStorage.setItem("Email",this.user.email)
+          }
         }
         if(this.appComp.loggedIn == false){
           this.errors.password= "Wrong Password"
