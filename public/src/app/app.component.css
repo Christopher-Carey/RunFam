@@ -19,4 +19,5 @@ img{
 }
 .arm{
     animation-duration: 3s;
+    animation-iteration-count: 5;
 }
