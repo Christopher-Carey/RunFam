@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from './api.service'
-import { NgxSpinnerService } from "ngx-spinner";
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -16,17 +15,9 @@ export class AppComponent implements OnInit {
 
   constructor(
     private _apiService: ApiService,
-    private spinner: NgxSpinnerService
     ){}
 
   ngOnInit(){
-        /** spinner starts on init */
-        this.spinner.show();
- 
-        setTimeout(() => {
-          /** spinner ends after 5 seconds */
-          this.spinner.hide();
-        }, 5000);
       }
   
   

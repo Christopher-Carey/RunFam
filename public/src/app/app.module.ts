@@ -12,6 +12,7 @@ import { RegisterComponent } from './register/register.component';
 import { UserDashComponent } from './user-dash/user-dash.component';
 import { LeaderComponent } from './leader/leader.component';
 import { LeaderDashComponent } from './leader-dash/leader-dash.component';
+import { SpinnerComponent } from './spinner/spinner.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { LeaderDashComponent } from './leader-dash/leader-dash.component';
     RegisterComponent,
     UserDashComponent,
     LeaderComponent,
-    LeaderDashComponent
+    LeaderDashComponent,
+    SpinnerComponent
   ],
   imports: [
     BrowserModule,
