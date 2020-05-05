@@ -32,15 +32,13 @@
     </div>    <table class="table table-dark table-hover">
       <thead>
         <tr>
-          <th></th>
           <th>First name</th>
           <th>Total Distance</th>
           <th>Latest Upload</th>
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let x of runner,let z = index">
-          <td>{{z+1}}</td>
+        <tr *ngFor="let x of runner">
           <td>{{x.name}}</td>
           <td>{{x.totalDist}} Miles</td>
           <td *ngIf="x.distance.length >= 1"><button type="button" data-toggle="modal" (click)="show(x.distance[0][2])">
@@ -79,15 +77,13 @@
     <table class="table table-dark table-hover">
       <thead>
         <tr>
-          <th></th>
           <th>First name</th>
           <th>Total Distance</th>
           <th>Latest Upload</th>
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let x of walkers,let z = index">
-          <td>{{z+1}}</td>
+        <tr *ngFor="let x of walkers">
           <td>{{x.name}}</td>
           <td>{{x.totalDist}} Miles</td>
           <td *ngIf="x.distance.length >= 1"><button type="button" data-toggle="modal" (click)="show(x.distance[0][2])">

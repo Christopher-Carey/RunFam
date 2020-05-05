@@ -1,7 +1,7 @@
 <div class="container">
     <div class="jumbotron">
         <nav class="navbar navbar-expand-sm  navbar-dark">
-            <a class="navbar-brand" href="#"><img class=" arm animated heartBeat" src="../assets/img/arm.PNG" alt="vvv">
+            <a class="navbar-brand" href="#"><img class=" arm animated heartBeat delay-2s" src="../assets/img/arm.PNG" alt="vvv">
             <!-- <a class="navbar-brand" href="#"><img class=" arm animated infinite heartBeat delay-2s" src="../assets/img/splat.png" alt="vvv"> -->
             </a>   
             <h2>Fit Fam Run</h2>
@@ -21,6 +21,9 @@
             </ul>
           </nav>
     </div>
+    <!-- <ngx-spinner bdColor = "rgba(0, 0, 0, 0.8)" size = "medium" color = "#de532c" type = "square-jelly-box" [fullScreen] = "true"><p style="color: white" > Loading... </p></ngx-spinner> -->
+
+
       <app-login *ngIf="loggedIn == false && showLogin == true" ></app-login>
 
       <app-register *ngIf="loggedIn == false && showReg == true" ></app-register>
