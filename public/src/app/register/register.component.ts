@@ -31,6 +31,7 @@ export class RegisterComponent implements OnInit {
     runnerType:"",
     error:false
   }
+  test;
 //=====================
 
   ngOnInit() {
@@ -44,6 +45,8 @@ export class RegisterComponent implements OnInit {
       runnerType:new FormControl(),
       totalDist:new FormControl(),
     });
+    this.test= this.regForm.controls.goal.setValue(0)
+    // this.test= this.regForm.controls.goal.value + "Miles"
   }
   //======Methods========
   RegUser(){  

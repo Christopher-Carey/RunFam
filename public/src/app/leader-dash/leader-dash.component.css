@@ -1,6 +1,15 @@
 *{
     vertical-align: top;
 }
+@font-face {
+    font-family: 'lovelyFont';
+    src: url("/assets/fonts/DontMeltDripRegular-LWWG.otf") 
+
+}
+h3{
+    font-family: "lovelyFont";
+    font-size: 45px;
+}
 .table-dark{
     background-color: #567B97;
 }

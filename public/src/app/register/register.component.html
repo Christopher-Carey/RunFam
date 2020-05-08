@@ -5,7 +5,7 @@
             <!-- === Name -->
             <div class="row">
                 <div class="col">
-                    <label for="">Name</label>
+                    <label for="">First & Last Name</label>
                 </div>
                 <div class="col">
                     <label style="color: red; margin-left: 40px;" *ngIf="errors.name">{{errors.name}}</label>
@@ -57,7 +57,11 @@
                     <label style="color: red; margin-left: 40px;" *ngIf="errors.goal">{{errors.goal}}</label>
                 </div>
             </div>
-            <input class="form-control" formControlName="goal" type="text">
+            <div class="goal-div">
+                <input class="form-control" formControlName="goal" type="text">
+                <span>{{this.regForm.controls.goal.value + " Miles"}}</span>
+
+            </div>
             <!-- === Run Type -->
             <div class="row">
                 <div class="col">

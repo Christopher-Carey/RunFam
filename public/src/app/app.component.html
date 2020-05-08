@@ -7,10 +7,10 @@
             <h2>Fit Fam Run</h2>
             <ul class="navbar-nav">
               <li class="nav-item">
-                <a class="nav-link" href="https://www.facebook.com/groups/FatTuesdayFam/">Facebook</a>
+                <a class="nav-link" target="_blank" href="https://www.facebook.com/groups/FatTuesdayFam/">Facebook</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="https://www.orangetheoryfitness.com/the-workout">OrangeTheory</a>
+                <a class="nav-link" target="_blank" href="https://www.orangetheoryfitness.com/the-workout">OrangeTheory</a>
               </li>
               <!-- <li class="nav-item">
                 <a *ngIf="loggedIn" class="nav-link" href="/">Logout</a>
@@ -32,12 +32,13 @@
 
     <app-leader-dash *ngIf="showLeader"></app-leader-dash>    
     <router-outlet ></router-outlet>
-    <div class="jumbotron footer">
+    <div  *ngIf="userDash == false" class="jumbotron footer">
       <small>Created and Desiged by : Christopher Carey</small><br>
-      
-      <img style="margin-top: 10px;" src="../assets/img/linkedin.PNG" alt="">
-      <img style="width: 52px;margin-left: 20px;margin-top: 10px;" src="../assets/img/icons8-resume-website-50.PNG" alt="">
-
-      
+      <a target="_blank" href="http://linkedin.com/in/christopher-carey-699b64175"><img style="margin-top: 10px;" src="../assets/img/linkedin.PNG" alt=""> </a>
+      <a target="_blank" href="http://christopher-carey.com/"><img style="width: 52px;margin-left: 20px;margin-top: 10px;" src="../assets/img/icons8-resume-website-50.PNG" alt=""></a>
+    </div>
+    <div *ngIf="userDash == true" class="jumbotron footer">
+      <small>This Months Price Brought to you by:</small><br>
+      <h2>Tim Tommy!</h2>    
     </div>
   </div>
