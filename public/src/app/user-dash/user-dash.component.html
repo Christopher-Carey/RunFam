@@ -23,6 +23,12 @@
 </nav>
   <div class="row">
     <div class="col">
+      <div class="center">
+        <a style="font-size: 10px;" class="btn btn-dark" data-toggle="modal" data-target="#myModal" href="#">Add Miles</a>
+        <a style="font-size: 10px;margin-left: 20px;"  class="btn btn-dark" id="showbtn" (click)="showlead()" href="#">Show Leaderboard</a>
+      </div>
+
+      
       <div class="card">
         <h3 class="card-header">Entries</h3>
 
@@ -88,10 +94,10 @@
           </form>
           <input class="btn btn-dark" type="file" (change)="Upload($event)">
           <form (submit)="ReadImg()">
-            <button *ngIf="File" class="btn btn-dark read-btn" type="submit">
+            <!-- <button *ngIf="File" class="btn btn-dark read-btn" type="submit">
               <div *ngIf="spinner" class="spinner-border spinner-border-sm"></div>
               <span *ngIf="!spinner">Read Image</span>
-            </button>
+            </button> -->
           </form>
           <img style="width: 100%;" [src]="base" alt="">
         </div>

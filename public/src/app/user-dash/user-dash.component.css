@@ -27,6 +27,17 @@
 #chart{
     width: 100%;
 }
+.center{
+    /* background-color: red; */
+    width: 40%;
+    display: none;
+    margin: 0 auto;
+}
+.center .btn{
+    margin-left: 0;
+    margin-top: 10px;
+
+}
 
 
 .navbar-dark{
@@ -70,5 +81,8 @@
     }
     .card{
         width: 100%;
+    }
+    .center{
+        display: block;
     }
   }
