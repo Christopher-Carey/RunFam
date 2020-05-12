@@ -45,6 +45,11 @@ h3{
     font-weight: bolder;
 
 }
+.challenge-title{
+    background-color: rgba(222, 83, 44, 0.2);
+    margin-bottom: 20px;
+
+}
 .navbar-nav{
     margin-left: 265px;
 }
@@ -76,6 +81,7 @@ h3{
 .custom-toggler.navbar-toggler { 
     border-color: rgb(86, 123, 151); 
 } 
+
 /* Setting the stroke to green using rgb values (0, 128, 0) */ 
   
 .custom-toggler .navbar-toggler-icon { 
