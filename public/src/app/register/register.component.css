@@ -1,3 +1,8 @@
+@font-face {
+    font-family: 'lovelyFont';
+    src: url("/assets/fonts/BebasNeue-Bold.otf") 
+
+}
 .card{
     width: 400px;
     padding: 20px;
@@ -5,11 +10,17 @@
 }
 .btn{
     margin-top: 20px;
-    background-color: #DE532C;
+    /* background-color: #DE532C; */
+    background-color: #008FCE;
     border: none;
 }
 .card-header{
-    background-color: rgba(86, 123, 151, 0.2);
+    /* background-color: rgba(86, 123, 151, 0.2); */
+    background-color: rgba(0,143,206, 0.2);
+    font-family: 'lovelyFont';
+    text-align: center;
+
+    
 }
 span{
     position: absolute;

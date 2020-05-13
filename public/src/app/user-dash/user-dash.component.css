@@ -1,3 +1,9 @@
+@font-face {
+    font-family: 'lovelyFont';
+    src: url("/assets/fonts/BebasNeue-Bold.otf") 
+
+}
+
 .card{
     padding: 20px;
     margin-top: 20px;
@@ -9,13 +15,19 @@
 }
 .btn{
     margin-top: 20px;
-    background-color: #DE532C;
+    /* background-color: #DE532C; */
+    background-color: #4582CE;
     margin-left: 20px;
     border: none;
 }
 .card-header{
-    background-color: rgba(86, 123, 151, 0.2);
+    /* background-color: rgba(86, 123, 151, 0.2); */
+    background-color: rgba(0,143,206, 0.2);
     text-align: center;
+}
+h3{
+    font-family: 'lovelyFont';
+
 }
 .btn{
     border: none;
@@ -41,7 +53,9 @@
 
 
 .navbar-dark{
-    background-color: rgba(86, 123, 151, 0.2);
+    /* background-color: rgba(86, 123, 151, 0.2); */
+    background-color: rgba(0,143,206, 0.2);
+
 }
 
 .navbar-dark .navbar-nav .nav-link {

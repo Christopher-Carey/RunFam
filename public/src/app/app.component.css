@@ -3,15 +3,26 @@
     src: url("/assets/fonts/Paintingwithchocolate-K5mo.ttf") 
 
 }
+@font-face {
+    font-family: 'lovelyFont';
+    src: url("/assets/fonts/BebasNeue-Bold.otf") 
+
+}
 
 .jumbotron{
-    background-color: #DE532C;
+    /* background-color: #DE532C; */
+    /* background-color: #6B6BFF; */
+    background-color: #008FCE;
     color: white;
     padding: 0;
+}
+.main-title{
+    margin: 0 auto;
 }
 h2{
     font-size: 53px;
     font-family: "TitleFont";
+    /* font-family: "lovelyFont"; */
     margin-top: 20px;}
 
 img{

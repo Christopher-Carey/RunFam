@@ -3,7 +3,7 @@
 }
 @font-face {
     font-family: 'lovelyFont';
-    src: url("/assets/fonts/DontMeltDripRegular-LWWG.otf") 
+    src: url("/assets/fonts/BebasNeue-Bold.otf") 
 
 }
 h3{
@@ -11,27 +11,37 @@ h3{
     font-size: 45px;
 }
 .table-dark{
-    background-color: #567B97;
+    /* background-color: #567B97; */
+    background-color: #4582CE;
+
 }
 .card-header{
-    background-color: rgba(86, 123, 151, 0.2);
+    /* background-color: rgba(86, 123, 151, 0.2); */
+    background-color: rgba(0,143,206, 0.2);
+
     text-align: center;
 
 }
 .title{
     margin-top: 20px;
-    background-color: rgba(222, 83, 44, 0.2);
+    /* background-color: rgba(222, 83, 44, 0.2); */
+    background-color: rgba(0,143,206, 0.2);
+
     text-align: center;
 }
 .tableTile{
-    background-color: rgba(86, 123, 151, 0.2);
+    /* background-color: rgba(86, 123, 151, 0.2); */
+    background-color: rgba(0,143,206, 0.2);
+
     text-align: center;
     margin-top: 20px;
 
     
 }
 .navbar-dark{
-    background-color: rgba(86, 123, 151, 0.2);
+    /* background-color: rgba(86, 123, 151, 0.2); */
+    background-color: rgba(0,143,206, 0.2);
+
 }
 
 .navbar-dark .navbar-nav .nav-link {
@@ -46,7 +56,9 @@ h3{
 
 }
 .challenge-title{
-    background-color: rgba(222, 83, 44, 0.2);
+    /* background-color: rgba(222, 83, 44, 0.2); */
+    background-color: rgba(0,143,206, 0.2);
+
     margin-bottom: 20px;
 
 }
