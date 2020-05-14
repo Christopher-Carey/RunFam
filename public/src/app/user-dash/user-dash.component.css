@@ -50,7 +50,7 @@ h3{
     margin-top: 10px;
 
 }
-span{
+.miles-span{
     position: absolute;
     top: 7px;
     left:13px;
@@ -60,6 +60,13 @@ span{
     /* background-color: red; */
     height:100%;
     width: 100%
+}
+.nav-userinfo{
+    position: absolute;
+    top: 55px;
+    color: rgb(86, 123, 151);
+    font-family:'lovelyFont';
+    left: 64px;
 }
 
 

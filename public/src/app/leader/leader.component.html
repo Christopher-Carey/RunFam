@@ -28,7 +28,7 @@
           <td>{{z+1}}</td>
           <td>{{x.name}}</td>
           <td>{{x.totalDist}} Miles</td>
-          <td *ngIf="x.distance.length >= 1"><img style="width: 40px;" [src]="x.distance[x.distance.length-1][2]" alt=""></td>
+          <td *ngIf="x.distance.length >= 1"><img style="width: 40px;" [src]="x.distance[0][2]" alt=""></td>
 
         </tr>
       </tbody>
@@ -61,8 +61,8 @@
         <tr *ngFor="let x of walkers,let z = index">
           <td>{{z+1}}</td>
           <td>{{x.name}}</td>
-          <td>{{x.totalDist}} Miles <small>(compare:{{x.totalDist*2}})</small></td>
-          <td *ngIf="x.distance.length >= 1"><img style="width: 40px;" [src]="x.distance[x.distance.length-1][2]" alt=""></td>
+          <td>{{x.totalDist}} Miles <small>(compare: {{x.totalDist*2}})</small></td>
+          <td *ngIf="x.distance.length >= 1"><img style="width: 40px;" [src]="x.distance[0][2]" alt=""></td>
         </tr>
       </tbody>
     </table>
