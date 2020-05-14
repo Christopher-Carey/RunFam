@@ -86,7 +86,8 @@ export class UserDashComponent implements OnInit {
   //======Methods========
   addMiles() {
     this.totalDist = 0
-    this.user.distance.push([this.milesForm.controls.date.value, this.milesForm.controls.miles.value, this.base])
+    // this.user.distance.push([this.milesForm.controls.date.value, this.milesForm.controls.miles.value, this.base])
+    this.user.distance.unshift([this.milesForm.controls.date.value, this.milesForm.controls.miles.value, this.base])
 
     // =================
     var dist = 0
@@ -170,10 +171,13 @@ export class UserDashComponent implements OnInit {
   deleteEntry(entry){
     var index = this.user.distance.indexOf(entry)
     this.user.distance.splice(index,1)
-    this.totalDist = 0
+    var dist = 0
     for (let i = 0; i < this.user.distance.length; i++) {
-      this.totalDist += this.user.distance[i][1]
+      dist += this.user.distance[i][1]
+      
+      // this.totalDist += this.user.distance[i][1]
     }
+    this.totalDist = dist.toFixed(2)
     this.user.totalDist = this.totalDist
     let observable = this._apiService.updateApi(this.user);
     observable.subscribe(results => {

@@ -72,6 +72,8 @@ span{
 .navbar-dark .navbar-nav .nav-link {
     color: rgb(86, 123, 151);
     font-size: 20px;
+    text-decoration: underline;
+    text-underline-position: under;
     /* margin-left: 265px; */
 }
 
@@ -82,7 +84,7 @@ span{
 
 }
 .navbar-nav{
-    margin-left: 265px;
+    margin-left: 199px;
 }
 .modal{
     overflow-y: auto;
