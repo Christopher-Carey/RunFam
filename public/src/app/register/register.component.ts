@@ -45,8 +45,7 @@ export class RegisterComponent implements OnInit {
       runnerType:new FormControl(),
       totalDist:new FormControl(),
     });
-    this.test= this.regForm.controls.goal.setValue(0)
-    // this.test= this.regForm.controls.goal.value + "Miles"
+    this.regForm.controls.goal.setValue(0)
   }
   //======Methods========
   RegUser(){  

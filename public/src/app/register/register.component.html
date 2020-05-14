@@ -58,8 +58,9 @@
                 </div>
             </div>
             <div class="goal-div">
-                <input class="form-control" formControlName="goal" type="text">
-                <span>{{this.regForm.controls.goal.value + " Miles"}}</span>
+                <input class="form-control" formControlName="goal" type="number">
+                <span *ngIf="this.regForm.controls.goal.value != null ">{{this.regForm.controls.goal.value + " Miles"}}</span>
+                <span *ngIf="this.regForm.controls.goal.value == null">{{" "+ " Miles"}}</span>
 
             </div>
             <!-- === Run Type -->

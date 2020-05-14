@@ -46,9 +46,9 @@ export class UserDashComponent implements OnInit {
       miles: new FormControl(),
       goal: new FormControl()
     });
-
+    this.milesForm.controls.goal.setValue(0)
     this.user = this.appComp.user
-    this.milesForm.controls.goal.setValue(this.user.goal)
+    // this.milesForm.controls.goal.setValue(this.user.goal)
     var dist = 0
     for (let i = 0; i < this.user.distance.length; i++) {
       dist += this.user.distance[i][1]

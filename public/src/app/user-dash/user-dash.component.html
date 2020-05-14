@@ -87,7 +87,11 @@
         <div class="card addform">
           <form [formGroup]="milesForm" (ngSubmit)='addMiles()'>
             <label for="">Distance</label>
-            <input class="form-control" formControlName='miles' type="number">
+            <div class="goal-div">
+              <input class="form-control" formControlName='miles' type="number">
+              <span *ngIf="this.milesForm.controls.miles.value != null">{{this.milesForm.controls.miles.value + " Miles"}}</span>
+              <span *ngIf="this.milesForm.controls.miles.value == null">{{' ' + " Miles"}}</span>
+          </div>
             <label for="">Date</label>
             <input class="form-control" formControlName='date' type="date">
             <input *ngIf="File" class="btn btn-dark" type="submit">
@@ -119,7 +123,11 @@
       <div class="modal-body">
         <form [formGroup]="milesForm" (ngSubmit)='updateGoal()'>
           <label for="">Edit Goal</label>
-          <input class="form-control" formControlName='goal' type="number">
+          <div class="goal-div">
+            <input class="form-control" formControlName='goal' type="number">
+            <span *ngIf="this.milesForm.controls.goal.value != null">{{this.milesForm.controls.goal.value + " Miles"}}</span>
+            <span *ngIf="this.milesForm.controls.goal.value == null">{{' ' + " Miles"}}</span>
+        </div>
           <input class="btn btn-dark " type="submit" value="Save">
         </form>
       </div>

@@ -50,6 +50,17 @@ h3{
     margin-top: 10px;
 
 }
+span{
+    position: absolute;
+    top: 7px;
+    left:13px;
+}
+.goal-div{
+    position: relative;
+    /* background-color: red; */
+    height:100%;
+    width: 100%
+}
 
 
 .navbar-dark{
