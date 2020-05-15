@@ -1,27 +1,39 @@
-<nav class="navbar navbar-expand-md navbar-dark">
-  <h3 style="font-size: 35px;" class="navbar-brand">Welcome {{user.name}}</h3>
-  <small class="nav-userinfo">{{user.totalDist}} Total Miles out of {{user.goal}}</small>
-  <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="collapsibleNavbar">
-    <ul class="navbar-nav">
-      <li class="nav-item">
-        <a class="nav-link" data-toggle="modal" data-target="#myModal" href="#">Add Miles </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" id="showbtn" (click)="showlead()" href="#">Show Leaderboard </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/" (click)="logout()">Logout </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" data-toggle="modal" data-target="#GoalModal" href="#">Edit Goal</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" target="_blank" href="https://www.facebook.com/groups/FatTuesdayFam/">FTF Facebook</a>
-      </li>
-    </ul>
+<nav class="navbar-expand-md navbar-dark">
+  <div class="row">
+    <div class="col">
+      <h3  class="name">Welcome {{user.name}}</h3>
+      <small class="nav-userinfo" style="font-size: 16px;">{{user.totalDist}} Total Miles out of {{user.goal}}</small>
+
+    </div>
+
+  </div> <br>
+  <div class="row">
+    <div class="col">
+      <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="modal" data-target="#myModal" href="#">Add Miles </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="showbtn" (click)="showlead()" href="#">Show Leaderboard </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/" (click)="logout()">Logout </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="modal" data-target="#GoalModal" href="#">Edit Goal</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" target="_blank" href="https://www.facebook.com/groups/FatTuesdayFam/">FTF Facebook</a>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+    
   </div>
 </nav>
   <div class="row">

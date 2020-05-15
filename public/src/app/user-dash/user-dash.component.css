@@ -34,9 +34,10 @@ h3{
     width: 100%;
 }
 .center{
-    width: 55%;
+    width: 100%;
     display: none;
     margin: 0 auto;
+    text-align: center;
 }
 .center .btn{
     margin-left: 0;
@@ -52,15 +53,19 @@ h3{
     height:100%;
     width: 100%
 }
-.nav-userinfo{
-    position: absolute;
-    top: 55px;
+.name{
     color: rgb(86, 123, 151);
-    font-family:'lovelyFont';
-    left: 64px;
+    font-size: 35px;
+    margin-top: 20px;
+}
+.nav-userinfo{
+    color: rgb(86, 123, 151);
+    font-size: 16px;
+
 }
 .navbar-dark{
     background-color: rgba(0,143,206, 0.2);
+    text-align: center;
 }
 .navbar-dark .navbar-nav .nav-link {
     color: rgb(86, 123, 151);
@@ -74,13 +79,15 @@ h3{
     font-weight: bolder;
 }
 .navbar-nav{
-    margin-left: 199px;
+    margin: 0 auto;
+    margin-bottom: 20px;
 }
 .modal{
     overflow-y: auto;
 }
 .custom-toggler.navbar-toggler { 
     border-color: rgb(86, 123, 151); 
+    margin-bottom: 20px;
 } 
 /* Setting the stroke to green using rgb values (0, 128, 0) */ 
 .custom-toggler .navbar-toggler-icon { 
@@ -93,6 +100,9 @@ h3{
     }
     .navbar-nav{
         margin-left: 0;
+    }
+    .navbar-brand{
+        font-size: 16px;
     }
     .card{
         width: 100%;
