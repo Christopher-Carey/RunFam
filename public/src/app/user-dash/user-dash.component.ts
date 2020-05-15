@@ -46,14 +46,13 @@ export class UserDashComponent implements OnInit {
       miles: new FormControl(),
       goal: new FormControl()
     });
-    this.milesForm.controls.goal.setValue(0)
+    // this.milesForm.controls.goal.setValue(0)
     this.user = this.appComp.user
-    // this.milesForm.controls.goal.setValue(this.user.goal)
+    this.milesForm.controls.goal.setValue(this.user.goal)
     var dist = 0
     for (let i = 0; i < this.user.distance.length; i++) {
       dist += this.user.distance[i][1]
       
-      // this.totalDist += this.user.distance[i][1]
     }
     this.totalDist = dist.toFixed(2)
     this.distLeft = this.user.goal - this.totalDist
@@ -86,25 +85,16 @@ export class UserDashComponent implements OnInit {
   //======Methods========
   addMiles() {
     this.totalDist = 0
-    // this.user.distance.push([this.milesForm.controls.date.value, this.milesForm.controls.miles.value, this.base])
     this.user.distance.unshift([this.milesForm.controls.date.value, this.milesForm.controls.miles.value, this.base])
 
     // =================
     var dist = 0
     for (let i = 0; i < this.user.distance.length; i++) {
       dist += this.user.distance[i][1]
-      
-      // this.totalDist += this.user.distance[i][1]
     }
     this.totalDist = dist.toFixed(2)
     this.user.totalDist = this.totalDist
-
-
     // =================
-    // for (let i = 0; i < this.user.distance.length; i++) {
-    //   this.totalDist += this.user.distance[i][1]
-    // }
-    // this.user.totalDist = this.totalDist
 
     let observable = this._apiService.updateApi(this.user);
     observable.subscribe(results => {
@@ -175,7 +165,6 @@ export class UserDashComponent implements OnInit {
     for (let i = 0; i < this.user.distance.length; i++) {
       dist += this.user.distance[i][1]
       
-      // this.totalDist += this.user.distance[i][1]
     }
     this.totalDist = dist.toFixed(2)
     this.user.totalDist = this.totalDist
@@ -220,7 +209,6 @@ export class UserDashComponent implements OnInit {
   }
   logout(){
     localStorage.clear()
-    // location.reload();
   }
 
   quote(){

@@ -1,9 +1,7 @@
 @font-face {
     font-family: 'lovelyFont';
     src: url("/assets/fonts/BebasNeue-Bold.otf") 
-
 }
-
 .card{
     padding: 20px;
     margin-top: 20px;
@@ -15,32 +13,27 @@
 }
 .btn{
     margin-top: 20px;
-    /* background-color: #DE532C; */
     background-color: #4582CE;
     margin-left: 20px;
     border: none;
 }
 .card-header{
-    /* background-color: rgba(86, 123, 151, 0.2); */
     background-color: rgba(0,143,206, 0.2);
     text-align: center;
 }
 h3{
     font-family: 'lovelyFont';
-
 }
 .btn{
     border: none;
 }
 .read-btn{
     margin-bottom: 20px;
-
 }
 #chart{
     width: 100%;
 }
 .center{
-    /* background-color: red; */
     width: 55%;
     display: none;
     margin: 0 auto;
@@ -48,7 +41,6 @@ h3{
 .center .btn{
     margin-left: 0;
     margin-top: 10px;
-
 }
 .miles-span{
     position: absolute;
@@ -57,7 +49,6 @@ h3{
 }
 .goal-div{
     position: relative;
-    /* background-color: red; */
     height:100%;
     width: 100%
 }
@@ -68,27 +59,19 @@ h3{
     font-family:'lovelyFont';
     left: 64px;
 }
-
-
 .navbar-dark{
-    /* background-color: rgba(86, 123, 151, 0.2); */
     background-color: rgba(0,143,206, 0.2);
-
 }
-
 .navbar-dark .navbar-nav .nav-link {
     color: rgb(86, 123, 151);
     font-size: 20px;
     text-decoration: underline;
     text-underline-position: under;
-    /* margin-left: 265px; */
 }
-
 .navbar-dark .navbar-brand {
     color: rgb(86, 123, 151);
     font-size: 20px;
     font-weight: bolder;
-
 }
 .navbar-nav{
     margin-left: 199px;
@@ -100,12 +83,10 @@ h3{
     border-color: rgb(86, 123, 151); 
 } 
 /* Setting the stroke to green using rgb values (0, 128, 0) */ 
-  
 .custom-toggler .navbar-toggler-icon { 
     background-image: url( 
 "data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgb(86, 123, 151)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E"); 
 } 
-
 @media only screen and (max-width: 600px) {
     #chart {
         margin-bottom: 100px;

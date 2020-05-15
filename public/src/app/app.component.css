@@ -1,17 +1,12 @@
 @font-face {
     font-family: 'TitleFont';
     src: url("/assets/fonts/Paintingwithchocolate-K5mo.ttf") 
-
 }
 @font-face {
     font-family: 'lovelyFont';
     src: url("/assets/fonts/BebasNeue-Bold.otf") 
-
 }
-
 .jumbotron{
-    /* background-color: #DE532C; */
-    /* background-color: #6B6BFF; */
     background-color: #008FCE;
     color: white;
     padding: 0;
@@ -22,19 +17,14 @@
 h2{
     font-size: 53px;
     font-family: "TitleFont";
-    /* font-family: "lovelyFont"; */
     margin-top: 20px;}
-
 img{
     width: 53px;
-    /* width: 85px; */
 }
-
 .navbar-dark .navbar-nav .nav-link {
     color: wheat;
     font-size: 20px;
     margin-left: 150px;
-    
 }
 .login-reg{
     background-color: tomato;
@@ -49,14 +39,11 @@ img{
     margin-top: 20px;
     padding: 10px;
 }
-
 @media only screen and (max-width: 600px) {
     .navbar-dark .navbar-nav .nav-link {
         margin-left: 20px
-        
     }
     h2{
         font-size: 29px;
     }
-
   }

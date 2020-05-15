@@ -3,15 +3,11 @@
     src: url("/assets/fonts/BebasNeue-Bold.otf") 
 
 }
-
-
 .table-dark{
-    /* background-color: #567B97; */
     background-color: #4582CE;
 }
 .card-header{
     margin-top: 20px;
-    
 }
 h3{
     font-family: "lovelyFont";
@@ -19,14 +15,11 @@ h3{
 }
 .title{
     margin-top: 20px;
-    /* background-color: rgba(222, 83, 44, 0.2); */
     background-color: rgba(0,143,206, 0.2);
     text-align: center;
 }
 .tableTile{
-    /* background-color: rgba(86, 123, 151, 0.2); */
     background-color: rgba(0,143,206, 0.2);
-
     text-align: center;
 }
 .arrow{
@@ -40,24 +33,18 @@ h3{
     .lead-dialog {
         max-width: 801px;
     }
-
 }
-
 .navbar-dark{
     background-color: rgba(86, 123, 151, 0.2);
 }
-
 .navbar-dark .navbar-nav .nav-link {
     color: rgb(86, 123, 151);
     font-size: 20px;
-    /* margin-left: 265px; */
 }
-
 .navbar-dark .navbar-brand {
     color: rgb(86, 123, 151);
     font-size: 20px;
     font-weight: bolder;
-
 }
 .navbar-nav{
     margin-left: 265px;

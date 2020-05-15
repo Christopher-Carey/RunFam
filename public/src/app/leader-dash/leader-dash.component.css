@@ -4,70 +4,49 @@
 @font-face {
     font-family: 'lovelyFont';
     src: url("/assets/fonts/BebasNeue-Bold.otf") 
-
 }
 h3{
     font-family: "lovelyFont";
     font-size: 45px;
 }
 .table-dark{
-    /* background-color: #567B97; */
     background-color: #4582CE;
-
 }
 .card-header{
-    /* background-color: rgba(86, 123, 151, 0.2); */
     background-color: rgba(0,143,206, 0.2);
-
     text-align: center;
-
 }
 .title{
     margin-top: 20px;
-    /* background-color: rgba(222, 83, 44, 0.2); */
     background-color: rgba(0,143,206, 0.2);
-
     text-align: center;
 }
 .tableTile{
-    /* background-color: rgba(86, 123, 151, 0.2); */
     background-color: rgba(0,143,206, 0.2);
-
     text-align: center;
     margin-top: 20px;
-
-    
 }
 .navbar-dark{
-    /* background-color: rgba(86, 123, 151, 0.2); */
     background-color: rgba(0,143,206, 0.2);
-
 }
-
 .navbar-dark .navbar-nav .nav-link {
     color: rgb(86, 123, 151);
     font-size: 20px;
 }
-
 .navbar-dark .navbar-brand {
     color: rgb(86, 123, 151);
     font-size: 20px;
     font-weight: bolder;
-
 }
 .challenge-title{
-    /* background-color: rgba(222, 83, 44, 0.2); */
     background-color: rgba(0,143,206, 0.2);
-
     margin-bottom: 20px;
-
 }
 .navbar-nav{
     margin-left: 265px;
 }
 .col-8{
     display: inline-block    
-    
 }
 .col-4{
     display: inline-block
@@ -78,7 +57,6 @@ h3{
     height: auto;
     padding: 20px;
     text-align: center;
-    
 }
 .modal{
     overflow-y: auto;
@@ -93,31 +71,24 @@ h3{
 .custom-toggler.navbar-toggler { 
     border-color: rgb(86, 123, 151); 
 } 
-
 /* Setting the stroke to green using rgb values (0, 128, 0) */ 
-  
 .custom-toggler .navbar-toggler-icon { 
     background-image: url( 
 "data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgb(86, 123, 151)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E"); 
 } 
-
 .scroll-arrow{
     width: 20px;
     float: right;
     margin-top: 11px;
 }
-
-
 @media only screen and (max-width: 600px) {
     .col-8{
         display: block;
         max-width: 100%;
-        
     }
     .col-4{
         display: block;
         max-width: 100%;
-
     }
     .navbar-nav{
         margin-left: 0;
