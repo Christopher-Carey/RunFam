@@ -13,6 +13,7 @@
     padding: 0;
     padding-top: 10px;
     padding-bottom: 10px;
+    position: relative;
 }
 a{
     color:white;
@@ -23,23 +24,27 @@ a{
 span{
     font-size: 10px;
     position: absolute;
-    top: 63px;
-    left: 601px;
+    top: 50%;
+    left: 35%;
 }
 .links{
-    position: absolute;
+    /* position: absolute;
     top: 8px;
-    left: 1039px;
+    left: 1039px; */
     font-size: 20px;
     text-align: right;
     font-family: 'lovelyFont';
+    float: right;
+    margin-right: 20px;
     
 }
 .main-title{
-    margin: 0 auto;
     position: absolute;
-    top: 23px;
-    left: 605px;
+    top: 3%;
+    left: 35%;
+}
+.short{
+    display: none;
 }
 h2{
     font-size: 53px;
@@ -83,17 +88,27 @@ img{
     span{
         top: 63px;
         left: 70px;
+        font-size: 7px;
     }
     .links{
-        top: 2px;
-        left: 250px;
+        /* top: 2px;
+        left: 250px; */
         font-size: 10px; 
     }
     .main-title{
-        top: 23px;
-        left: 95px;
+        top: 6%;
+        left: 28%;
     }
     .arm{
         width: 57px;
+    }
+    .long{
+        display: none;
+    }
+    .short{
+        display: inline;
+        top:57%;
+        left: 27%;
+
     }
   }
