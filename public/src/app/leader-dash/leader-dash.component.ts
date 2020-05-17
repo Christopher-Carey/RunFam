@@ -29,6 +29,8 @@ user;
     this.user = this.appComp.user
     this.getApisWalker()
     this.getApisRunner()
+    console.log(this.runner)
+    console.log(this.runner[0])
   }
   // =========== Methods ==========
    getApisWalker(){
@@ -70,5 +72,6 @@ user;
     var target = document.getElementById("runner-header")
     target.scrollIntoView()
   }
+
   // ===================================
 }

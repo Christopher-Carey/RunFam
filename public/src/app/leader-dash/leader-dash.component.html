@@ -43,6 +43,7 @@
         <td><img style="width: 40px;" src="../assets/img/flex/GOLD-FLEX.PNG"  alt=""></td>
         <td>{{runner[0].name}}</td>
         <td>{{runner[0].totalDist}} Miles</td>
+        <span>{{runner[0]}}</span>
         <td *ngIf="runner[0].distance.length >= 1"><button type="button" data-toggle="modal" (click)="show(runner[0].distance[0][2])">
           <img style="width: 40px;" [src]="runner[0].distance[0][2]" alt="">
         </button></td>
