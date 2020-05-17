@@ -1,3 +1,4 @@
+
 @font-face {
     font-family: 'TitleFont';
     src: url("/assets/fonts/Paintingwithchocolate-K5mo.ttf") 
@@ -18,20 +19,27 @@ a{
     /* margin-left: 66px; */
     text-decoration: underline;
     text-underline-position: under;
-    
 }
 span{
     font-size: 10px;
-}
-.logo{
-    text-align: center;
+    position: absolute;
+    top: 63px;
+    left: 601px;
 }
 .links{
     position: absolute;
+    top: 8px;
+    left: 1039px;
+    font-size: 20px;
+    text-align: right;
+    font-family: 'lovelyFont';
     
 }
 .main-title{
     margin: 0 auto;
+    position: absolute;
+    top: 23px;
+    left: 605px;
 }
 h2{
     font-size: 53px;
@@ -51,6 +59,13 @@ img{
 .arm{
     animation-duration: 3s;
     animation-iteration-count: 5;
+    width: 100px;
+}
+.btn{
+    margin-top: 20px;
+    background-color: #4582CE;
+    margin-left: 20px;
+    border: none;
 }
 .footer{
     height: 106px;
@@ -64,5 +79,21 @@ img{
     }
     h2{
         font-size: 29px;
+    }
+    span{
+        top: 63px;
+        left: 70px;
+    }
+    .links{
+        top: 2px;
+        left: 250px;
+        font-size: 10px; 
+    }
+    .main-title{
+        top: 23px;
+        left: 95px;
+    }
+    .arm{
+        width: 57px;
     }
   }

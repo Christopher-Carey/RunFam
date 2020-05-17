@@ -109,8 +109,8 @@ export class UserDashComponent implements OnInit {
 
   Upload(event) {
     this.File = event.target.files[0]
-    var file = this.File
-    this.getBase64(file).then(
+    // var file = this.File
+    this.getBase64(this.File).then(
       data => {
         this.base = data
       }
