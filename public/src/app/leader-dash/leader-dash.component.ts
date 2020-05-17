@@ -29,8 +29,6 @@ user;
     this.user = this.appComp.user
     this.getApisWalker()
     this.getApisRunner()
-    console.log(this.runner)
-    console.log(this.runner[0])
   }
   // =========== Methods ==========
    getApisWalker(){
@@ -38,14 +36,13 @@ user;
     observable.subscribe(results => {
       // console.log("yay",results)
       this.walkers = results['results']
-    })
+\    })
   }
    getApisRunner(){
     let observable = this._apiService.getApisRun();
     observable.subscribe(results => {
       // console.log("yay",results)
       this.runner = results['results']
-
     })
   }
   showdash(){
