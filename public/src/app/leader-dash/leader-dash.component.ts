@@ -36,7 +36,7 @@ user;
     observable.subscribe(results => {
       // console.log("yay",results)
       this.walkers = results['results']
-\    })
+   })
   }
    getApisRunner(){
     let observable = this._apiService.getApisRun();
