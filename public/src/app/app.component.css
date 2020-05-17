@@ -20,6 +20,7 @@ a{
     /* margin-left: 66px; */
     text-decoration: underline;
     text-underline-position: under;
+    letter-spacing: 3px;
 }
 span{
     font-size: 10px;
