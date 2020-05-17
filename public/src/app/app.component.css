@@ -10,6 +10,25 @@
     background-color: #008FCE;
     color: white;
     padding: 0;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+a{
+    color:white;
+    /* margin-left: 66px; */
+    text-decoration: underline;
+    text-underline-position: under;
+    
+}
+span{
+    font-size: 10px;
+}
+.logo{
+    text-align: center;
+}
+.links{
+    position: absolute;
+    
 }
 .main-title{
     margin: 0 auto;
@@ -19,7 +38,7 @@ h2{
     font-family: "TitleFont";
     margin-top: 20px;}
 img{
-    width: 53px;
+    width: 52px;
 }
 .navbar-dark .navbar-nav .nav-link {
     color: wheat;
