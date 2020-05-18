@@ -298,7 +298,7 @@ export class UserDashComponent implements OnInit {
       42: "There are two types of people who will tell you that you cannot make a difference in this world: those who are afraid to try and those who are afraid you will succeed. --Ray Goforth",
     }
     var ranNum = Math.floor(Math.random() * 42)
-    console.log(ranNum)
+    // console.log(ranNum)
     this.Quote = quoteList[ranNum]
   }
 

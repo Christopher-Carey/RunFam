@@ -85,10 +85,12 @@ h3{
     .col-8{
         display: block;
         max-width: 100%;
+        padding: 0;
     }
     .col-4{
         display: block;
         max-width: 100%;
+        padding: 0;
     }
     .navbar-nav{
         margin-left: 0;
