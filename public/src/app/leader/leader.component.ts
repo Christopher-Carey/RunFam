@@ -34,8 +34,6 @@ RunTop;
     observable.subscribe(results => {
       // console.log("yay",results)
       this.runnerr = results['results']
-      // this.runner= results['error']
-      // console.log(this.runner)
     })
   }
    getApisWalker(){
