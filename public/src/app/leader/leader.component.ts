@@ -25,8 +25,7 @@ RunTop;
 //=====================
   ngOnInit() {
     this.user = this.appComp.user
-    
-    this.getApisWalker()
+    this.getApisRunner()
   }
   // =========== Methods ==========
   getApisRunner(){
@@ -34,6 +33,8 @@ RunTop;
     observable.subscribe(results => {
       // console.log("yay",results)
       this.runnerr = results['results']
+      this.getApisWalker()
+
     })
   }
    getApisWalker(){
@@ -41,7 +42,7 @@ RunTop;
     observable.subscribe(results => {
       // console.log("yay",results)
       this.walkers = results['results']
-      this.getApisRunner()
+      
     })
   }
   scrollDown(){
