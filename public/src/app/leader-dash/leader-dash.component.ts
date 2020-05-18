@@ -19,7 +19,7 @@ export class LeaderDashComponent implements OnInit {
    }
 
  //======Variables======
-runner;
+runnerr;
 walkers;
 user;
 //=====================
@@ -42,7 +42,7 @@ user;
     let observable = this._apiService.getApisRun();
     observable.subscribe(results => {
       // console.log("yay",results)
-      this.runner = results['results']
+      this.runnerr = results['results']
     })
   }
   showdash(){

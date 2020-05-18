@@ -18,7 +18,7 @@ export class LeaderComponent implements OnInit {
   ) { }
 
 //======Variables======
-runner;
+runnerr;
 walkers;
 user;
 RunTop;
@@ -33,8 +33,8 @@ RunTop;
     let observable = this._apiService.getApisRun();
     observable.subscribe(results => {
       // console.log("yay",results)
-      this.runner = results['results']
-      // this.runner = results['error']
+      this.runnerr = results['results']
+      // this.runner= results['error']
       // console.log(this.runner)
     })
   }
