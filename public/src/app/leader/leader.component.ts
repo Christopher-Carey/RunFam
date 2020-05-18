@@ -35,9 +35,6 @@ export class LeaderComponent implements OnInit {
       console.log("yay", results)
       this.runnerr = results['results']
       this.runnerr.sort((a, b) => (a.totalDist > b.totalDist) ? -1 : 1)
-
-       
-
     })
   }
   getApisWalker() {
