@@ -27,7 +27,6 @@ export class LeaderComponent implements OnInit {
   ngOnInit() {
     this.user = this.appComp.user
     this.getApisRunner()
-    this.getApisWalker() 
   }
   // =========== Methods ==========
   getApisRunner() {
@@ -36,6 +35,8 @@ export class LeaderComponent implements OnInit {
       console.log("yay", results)
       this.runnerr = results['results']
       this.runnerr.sort((a, b) => (a.totalDist > b.totalDist) ? -1 : 1)
+      this.getApisWalker() 
+
     })
   }
   getApisWalker() {
