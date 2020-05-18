@@ -16,7 +16,7 @@ const mongoose = require('mongoose'),
                 .catch(err => response.json({ error: err.error }))
         },
         indexrun: function (request, response) {
-            user.find({runnerType: "runner"})
+            user.find({runnerType: "runner"}).limit(10)
                 .then(users => response.json({ results: users }))
                 .catch(err => response.json({ error: err.error }))
         },
