@@ -17,40 +17,40 @@ export class LeaderComponent implements OnInit {
 
   ) { }
 
-//======Variables======
-runnerr;
-walkers;
-user;
-RunTop;
-//=====================
+  //======Variables======
+  runnerr;
+  walkers;
+  user;
+  RunTop;
+
+  //=====================
   ngOnInit() {
     this.user = this.appComp.user
     this.getApisRunner()
+    this.getApisWalker() 
   }
   // =========== Methods ==========
-  getApisRunner(){
+  getApisRunner() {
     let observable = this._apiService.getApisRun();
     observable.subscribe(results => {
-      console.log("yay",results)
+      // console.log("yay", results)
       this.runnerr = results['results']
-      console.log(this.runnerr)
-      this.getApisWalker()
-
+      this.runnerr.sort((a, b) => (a.totalDist > b.totalDist) ? -1 : 1)
     })
   }
-   getApisWalker(){
+  getApisWalker() {
     let observable = this._apiService.getApisWalk();
     observable.subscribe(results => {
       // console.log("yay",results)
       this.walkers = results['results']
-      
+      this.walkers.sort((a, b) => (a.totalDist > b.totalDist) ? -1 : 1)
     })
   }
-  scrollDown(){
+  scrollDown() {
     var target = document.getElementById("walker-header")
     target.scrollIntoView()
   }
-  scrollUp(){
+  scrollUp() {
     var target = document.getElementById("runner-header")
     target.scrollIntoView()
   }
