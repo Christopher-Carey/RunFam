@@ -34,7 +34,7 @@ export class LeaderComponent implements OnInit {
     observable.subscribe(results => {
       console.log("yay", results)
       this.runnerr = results['results']
-      this.runnerr.sort((a, b) => (a.totalDist > b.totalDist) ? -1 : 1)
+      // this.runnerr.sort((a, b) => (a.totalDist > b.totalDist) ? -1 : 1)
       this.getApisWalker() 
 
     })
