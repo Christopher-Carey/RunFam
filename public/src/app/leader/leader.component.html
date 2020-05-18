@@ -23,38 +23,8 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td><img style="width: 40px;" src="../assets/img/flex/GOLD-FLEX.PNG"  alt=""></td>
-          <td>
-            <!-- <img style="width: 20px;" src="../assets/img/flex/GOLD-FLEX.PNG"  alt=""> -->
-            {{runner[0].name}}
-            <!-- <img style="width: 20px;transform: scaleX(-1);" src="../assets/img/flex/GOLD-FLEX.PNG"  alt=""></td> -->
-          <td>{{runner[0].totalDist}} Miles</td>
-          <td *ngIf="runner[0].distance.length >= 1"><img style="width: 40px;" [src]="runner[0].distance[0][2]" alt=""></td>
-
-        </tr>
-        <tr>
-          <td><img style="width: 40px;" src="../assets/img/flex/SILVER-FLEX.PNG"  alt=""></td>
-          <td>
-            <!-- <img style="width: 20px;" src="../assets/img/flex/GOLD-FLEX.PNG"  alt=""> -->
-            {{runner[1].name}}
-            <!-- <img style="width: 20px;transform: scaleX(-1);" src="../assets/img/flex/GOLD-FLEX.PNG"  alt=""></td> -->
-          <td>{{runner[1].totalDist}} Miles</td>
-          <td *ngIf="runner[1].distance.length >= 1"><img style="width: 40px;" [src]="runner[1].distance[0][2]" alt=""></td>
-
-        </tr>
-        <tr>
-          <td><img style="width: 40px;" src="../assets/img/flex/BRONZE-FLEX.PNG"  alt=""></td>
-          <td>
-            <!-- <img style="width: 20px;" src="../assets/img/flex/GOLD-FLEX.PNG"  alt=""> -->
-            {{runner[2].name}}
-            <!-- <img style="width: 20px;transform: scaleX(-1);" src="../assets/img/flex/GOLD-FLEX.PNG"  alt=""></td> -->
-          <td>{{runner[2].totalDist}} Miles</td>
-          <td *ngIf="runner[2].distance.length >= 1"><img style="width: 40px;" [src]="runner[2].distance[0][2]" alt=""></td>
-
-        </tr>
-        <tr *ngFor="let x of runner.slice(3),let z = index">
-          <td>{{z+4}}</td>
+        <tr *ngFor="let x of runner,let z = index">
+          <td>{{z+1}}</td>
           <td>{{x.name}}</td>
           <td>{{x.totalDist}} Miles</td>
           <td *ngIf="x.distance.length >= 1"><img style="width: 40px;" [src]="x.distance[0][2]" alt=""></td>
@@ -87,35 +57,9 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td><img style="width: 40px;" src="../assets/img/flex/GOLD-FLEX.PNG"  alt=""></td>
-          <td>
-            <!-- <img style="width: 20px;" src="../assets/img/flex/GOLD-FLEX.PNG"  alt=""> -->
-            {{walkers[0].name}}
-            <!-- <img style="width: 20px;transform: scaleX(-1);" src="../assets/img/flex/GOLD-FLEX.PNG"  alt=""></td> -->
-          <td>{{walkers[0].totalDist}} Miles</td>
-          <td *ngIf="walkers[0].distance.length >= 1"><img style="width: 40px;" [src]="walkers[0].distance[0][2]" alt=""></td>
-        </tr>
-        <tr>
-          <td><img style="width: 40px;" src="../assets/img/flex/SILVER-FLEX.PNG" alt=""></td>
-          <td>
-            <!-- <img style="width: 20px;" src="../assets/img/flex/GOLD-FLEX.PNG"  alt=""> -->
-            {{walkers[1].name}}
-            <!-- <img style="width: 20px;transform: scaleX(-1);" src="../assets/img/flex/GOLD-FLEX.PNG"  alt=""></td> -->
-          <td>{{walkers[1].totalDist}} Miles</td>
-          <td *ngIf="walkers[1].distance.length >= 1"><img style="width: 40px;" [src]="walkers[1].distance[0][2]" alt=""></td>
-        </tr>
-        <tr>
-          <td><img style="width: 40px;" src="../assets/img/flex/BRONZE-FLEX.PNG"  alt=""></td>
-          <td>
-            <!-- <img style="width: 20px;" src="../assets/img/flex/GOLD-FLEX.PNG"  alt=""> -->
-            {{walkers[2].name}}
-            <!-- <img style="width: 20px;transform: scaleX(-1);" src="../assets/img/flex/GOLD-FLEX.PNG"  alt=""></td> -->
-          <td>{{walkers[2].totalDist}} Miles</td>
-          <td *ngIf="walkers[2].distance.length >= 1"><img style="width: 40px;" [src]="walkers[2].distance[0][2]" alt=""></td>
-        </tr>
-        <tr *ngFor="let x of walkers.slice(3),let z = index">
-          <td>{{z+4}}</td>
+      
+        <tr *ngFor="let x of walkers,let z = index">
+          <td>{{z+1}}</td>
           <td>{{x.name}}</td>
           <td>{{x.totalDist}} Miles <small>(compare: {{x.totalDist*2}})</small></td>
           <td *ngIf="x.distance.length >= 1"><img style="width: 40px;" [src]="x.distance[0][2]" alt=""></td>

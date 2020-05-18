@@ -21,10 +21,11 @@ export class LeaderComponent implements OnInit {
 runner;
 walkers;
 user;
+RunTop;
 //=====================
   ngOnInit() {
     this.user = this.appComp.user
-    this.getApisRunner()
+    
     this.getApisWalker()
   }
   // =========== Methods ==========
@@ -33,14 +34,16 @@ user;
     observable.subscribe(results => {
       // console.log("yay",results)
       this.runner = results['results']
+      // this.runner = results['error']
       // console.log(this.runner)
     })
   }
    getApisWalker(){
     let observable = this._apiService.getApisWalk();
     observable.subscribe(results => {
-      console.log("yay",results)
+      // console.log("yay",results)
       this.walkers = results['results']
+      this.getApisRunner()
     })
   }
   scrollDown(){
