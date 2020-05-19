@@ -32,7 +32,7 @@ export class LeaderComponent implements OnInit {
   getApisRunner() {
     let observable = this._apiService.getApisRun();
     observable.subscribe(results => {
-      // console.log("yay", results)
+      console.log("yay", results)
       this.runnerr = results['results']
       this.runnerr.sort((a, b) => (a.totalDist > b.totalDist) ? -1 : 1)
     })
@@ -43,7 +43,7 @@ export class LeaderComponent implements OnInit {
       // console.log("yay",results)
       this.walkers = results['results']
       this.walkers.sort((a, b) => (a.totalDist > b.totalDist) ? -1 : 1)
-      setTimeout(() => {  this.getApisRunner(); }, 2000);
+      setTimeout(() => {  this.getApisRunner(); }, 500);
       
     })
   }

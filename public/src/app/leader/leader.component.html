@@ -1,6 +1,6 @@
 <div class="card-header title" data-aos="zoom-in-up">
   <h3 >Leader Board</h3>
-  <small class="total-member">{{runnerr.length + walkers.length}} Members and counting!!</small>
+  <small *ngIf="runnerr" class="total-member">{{runnerr.length + walkers.length}} Members and counting!!</small>
 
 </div>
 
