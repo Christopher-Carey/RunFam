@@ -10,17 +10,8 @@ const mongoose = require('mongoose'),
                 .then(users => response.json({ results: users }))
                 .catch(err => response.json({ error: err.error }))
         },
-        indexwalk: function (request, response) {
-            user.find({runnerType: "power walker"})
-                .then(usersA => {
-                    user.find({runnerType: "runner"})
-                        .then(usersB => response.json({ walker:usersA,runner:usersB }))
-                        .catch(err => response.json({ error: err.error }))
-                })
-                .catch(err => response.json({ error: err.error }))
-        },
         indexrun: function (request, response) {
-            user.find({runnerType: "runner"})
+            user.find({runnerType: "runner"}).limit(47)
                 .then(users => response.json({ results: users }))
                 .catch(err => response.json({ error: err.error }))
         },
