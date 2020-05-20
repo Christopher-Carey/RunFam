@@ -43,7 +43,8 @@ export class LeaderComponent implements OnInit {
       console.log("yay",results)
       this.walkers = results['results']
       this.walkers.sort((a, b) => (a.totalDist > b.totalDist) ? -1 : 1)
-      setTimeout(() => {  this.getApisRunner(); }, 500);
+      this.getApisRunner()
+      // setTimeout(() => {  ; }, 500);
       
     })
   }
