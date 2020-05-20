@@ -17,7 +17,7 @@
         </div>
 
       </div>
-      <div *ngIf="!runnerr"class="spinner-border text-muted"></div>
+      <!-- <div *ngIf="!runnerr"class="spinner-border text-muted"></div> -->
 
     </div>
     <table class="table table-dark table-hover">
@@ -26,16 +26,28 @@
           <th></th>
           <th>First name</th>
           <th>Total Distance</th>
-          <th>Latest Upload</th>
+          <!-- <th>Latest Upload</th> -->
         </tr>
       </thead>
 
       <tbody>
-        <tr *ngFor="let j of runnerr,let v = index">
-          <td>{{v+1}}</td>
-          <td>{{j.name}}</td>
-          <td>{{j.totalDist}} Miles</td>
-          <td *ngIf="j.distance.length >= 1"><img style="width: 40px;" [src]="j.distance[0][2]" alt=""></td>
+        <tr *ngFor="let x of runnerr.slice(0,3),let z = index">
+          <td>
+            <img *ngIf="z == 0" style="width: 40px;" src="../assets/img/flex/GOLD-FLex.PNG"  alt="">
+            <img *ngIf="z == 1" style="width: 40px;" src="../assets/img/flex/SILVER-FLex.PNG"  alt="">
+            <img *ngIf="z == 2" style="width: 40px;" src="../assets/img/flex/BRONZE-FLex.PNG"  alt="">
+
+          </td>
+          <td>{{x.name}}</td>
+          <td>{{x.totalDist}} Miles</td>
+
+
+        </tr>
+        <tr *ngFor="let x of runnerr.slice(3),let z = index">
+          <td>{{z+1}}</td>
+          <td>{{x.name}}</td>
+          <td>{{x.totalDist}} Miles</td>
+          <!-- <td *ngIf="j.distance.length >= 1"><img style="width: 40px;" [src]="x.distance[0][2]" alt=""></td> -->
 
         </tr>
       </tbody>
@@ -53,7 +65,7 @@
         </div>
 
       </div>
-      <div *ngIf="!walkers"class="spinner-border text-muted"></div>
+      <!-- <div *ngIf="!walkers"class="spinner-border text-muted"></div> -->
 
 
     </div>
@@ -63,16 +75,28 @@
           <th></th>
           <th>First name</th>
           <th>Total Distance</th>
-          <th>Latest Upload</th>
+          <!-- <th>Latest Upload</th> -->
         </tr>
       </thead>
       <tbody>
+        <tr *ngFor="let x of walkers.slice(0,3),let z = index">
+          <td>
+            <img *ngIf="z == 0" style="width: 40px;" src="../assets/img/flex/GOLD-FLex.PNG"  alt="">
+            <img *ngIf="z == 1" style="width: 40px;" src="../assets/img/flex/SILVER-FLex.PNG"  alt="">
+            <img *ngIf="z == 2" style="width: 40px;" src="../assets/img/flex/BRONZE-FLex.PNG"  alt="">
+
+          </td>
+          <td>{{x.name}}</td>
+          <td>{{x.totalDist}} Miles</td>
+
+
+        </tr>
       
-        <tr *ngFor="let x of walkers,let z = index">
+        <tr *ngFor="let x of walkers.slice(3),let z = index">
           <td>{{z+1}}</td>
           <td>{{x.name}}</td>
           <td>{{x.totalDist}} Miles <small>(compare: {{x.totalDist*2}})</small></td>
-          <td *ngIf="x.distance.length >= 1"><img style="width: 40px;" [src]="x.distance[0][2]" alt=""></td>
+          <!-- <td *ngIf="x.distance.length >= 1"><img style="width: 40px;" [src]="x.distance[0][2]" alt=""></td> -->
         </tr>
       </tbody>
     </table>
