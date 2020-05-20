@@ -11,13 +11,13 @@ const mongoose = require('mongoose'),
                 .catch(err => response.json({ error: err.error }))
         },
         indexrun: function (request, response) {
-            user.find({runnerType: "runner"}, { name:1,totalDist:1 })
+            user.find({runnerType: "runner"}, { name:1,totalDist:1,distance: {$slice: 1}})
             // user.find({runnerType: "runner"})
                 .then(users => response.json({ results: users }))
                 .catch(err => response.json({ error: err.error }))
         },
         indexwalk: function (request, response) {
-            user.find({runnerType: "power walker"},{ name:1,totalDist:1 })
+            user.find({runnerType: "power walker"}, { name:1,totalDist:1,distance: {$slice: 1}})
                 .then(users => response.json({ results: users }))
                 .catch(err => response.json({ error: err.error }))
         },
