@@ -120,12 +120,12 @@
           <!-- <button class="btn btn-dark"  (click)="compressFile()">Upload Image</button> -->
 
           <input class="btn btn-dark" type="file" (change)="Upload($event)">
-          <form (submit)="ReadImg()">
-            <!-- <button *ngIf="File" class="btn btn-dark read-btn" type="submit">
+          <!-- <form (submit)="ReadImg()">
+            <button *ngIf="File" class="btn btn-dark read-btn" type="submit">
               <div *ngIf="spinner" class="spinner-border spinner-border-sm"></div>
               <span *ngIf="!spinner">Read Image</span>
-            </button> -->
-          </form>
+            </button>
+          </form> -->
           <img style="width: 100%;" [src]="base" alt="">
         </div>
         <!-- ========================== -->

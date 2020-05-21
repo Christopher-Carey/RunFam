@@ -28,12 +28,11 @@ export class UserDashComponent implements OnInit {
   spinner: boolean;
   TextArry: any;
   File;
-  base;
   showleader = false
   Quote = ""
 
-  imgResultBeforeCompress: string;
-  imgResultAfterCompress: string;
+  imgResultBeforeCompress
+  imgResultAfterCompress
   //====================
 
 
@@ -91,7 +90,7 @@ export class UserDashComponent implements OnInit {
   //======Methods========
   addMiles() {
     this.totalDist = 0
-    this.user.distance.unshift([this.milesForm.controls.date.value, this.milesForm.controls.miles.value, this.base])
+    this.user.distance.unshift([this.milesForm.controls.date.value, this.milesForm.controls.miles.value, this.imgResultAfterCompress])
 
     // =================
     var dist = 0
@@ -109,7 +108,7 @@ export class UserDashComponent implements OnInit {
       this.Chart.update();
       this.leadComp.ngOnInit()
       this.File = ""
-      this.base = ""
+      this.imgResultAfterCompress = ""
     })
   }
 
@@ -117,22 +116,17 @@ export class UserDashComponent implements OnInit {
     this.File = event.target.files[0]
     this.getBase64(this.File).then(
       data => {
-        this.base = data
-        this.imgResultBeforeCompress = this.base;
-        console.log(this.imgResultBeforeCompress)
-    
-        console.warn('Size in bytes was:', this.imageCompress.byteCount(this.base));
-    
-    
-    
-    
-        this.imageCompress.compressFile(this.base, 1, 50, 50).then(
+        this.imgResultBeforeCompress = data
+        // console.log(this.imgResultBeforeCompress)
+        // console.warn('Size in bytes was:', this.imageCompress.byteCount(this.base));
+        this.imageCompress.compressFile(this.imgResultBeforeCompress,50, 50).then(
           result => {
             this.imgResultAfterCompress = result;
-            this.File = this.imgResultAfterCompress
-            this.base = this.imgResultAfterCompress
-            console.log(this.imgResultAfterCompress)
-            console.warn('Size in bytes is now:', this.imageCompress.byteCount(result));
+            // this.imgResultAfterCompress = result;
+            // this.File = this.imgResultAfterCompress
+            // this.base = this.imgResultAfterCompress
+            // console.log(this.base)
+            // console.warn('Size in bytes is now:', this.imageCompress.byteCount(result));
           }
         );
       }
