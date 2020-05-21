@@ -113,38 +113,60 @@ export class UserDashComponent implements OnInit {
     })
   }
 
-  // Upload(event) {
-  //   this.File = event.target.files[0]
-  //   // var file = this.File
-  //   this.getBase64(this.File).then(
-  //     data => {
-  //       this.base = data
-  //     }
-  //   );
-  //   // console.log(event)
-  // }
+  Upload(event) {
+    this.File = event.target.files[0]
+    this.getBase64(this.File).then(
+      data => {
+        this.base = data
+        this.imgResultBeforeCompress = this.base;
+        console.log(this.imgResultBeforeCompress)
+    
+        console.warn('Size in bytes was:', this.imageCompress.byteCount(this.base));
+    
+    
+    
+    
+        this.imageCompress.compressFile(this.base, 1, 50, 50).then(
+          result => {
+            this.imgResultAfterCompress = result;
+            this.File = this.imgResultAfterCompress
+            this.base = this.imgResultAfterCompress
+            console.log(this.imgResultAfterCompress)
+            console.warn('Size in bytes is now:', this.imageCompress.byteCount(result));
+          }
+        );
+      }
+    );
+
+   
+
+
+    // var file = this.File
+    // console.log(event)
+  }
 
   //+++++++++++++++++++++++++++++++++++++
-  compressFile() {
-    this.imageCompress.uploadFile().then(({ image, orientation }) => {
+  // compressFile() {
+  //   this.imageCompress.uploadFile().then(({ image, orientation }) => {
+  //     console.log(orientation)
 
-      this.imgResultBeforeCompress = image;
-      console.log(this.imgResultBeforeCompress)
+  //     this.imgResultBeforeCompress = image;
+  //     console.log(this.imgResultBeforeCompress)
 
-      console.warn('Size in bytes was:', this.imageCompress.byteCount(image));
+  //     console.warn('Size in bytes was:', this.imageCompress.byteCount(image));
 
-      this.imageCompress.compressFile(image, orientation, 50, 50).then(
-        result => {
-          this.imgResultAfterCompress = result;
-          this.File = this.imgResultAfterCompress
-          this.base = this.imgResultAfterCompress
-          console.log(this.imgResultAfterCompress)
-          console.warn('Size in bytes is now:', this.imageCompress.byteCount(result));
-        }
-      );
+  //     this.imageCompress.compressFile(image, orientation, 50, 50).then(
+  //       result => {
+  //         this.imgResultAfterCompress = result;
+  //         this.File = this.imgResultAfterCompress
+  //         this.base = this.imgResultAfterCompress
+  //         console.log(this.imgResultAfterCompress)
+  //         console.warn('Size in bytes is now:', this.imageCompress.byteCount(result));
+  //       }
+  //     );
 
-    });
-  }
+  //   });
+  // }
   ReadImg() {
     this.spinner = true
     const worker = createWorker({
@@ -177,14 +199,14 @@ export class UserDashComponent implements OnInit {
 
     })();
   }
-  // getBase64(file) {
-  //   return new Promise((resolve, reject) => {
-  //     const reader = new FileReader();
-  //     reader.readAsDataURL(file);
-  //     reader.onload = () => resolve(reader.result);
-  //     reader.onerror = error => reject(error);
-  //   });
-  // }
+  getBase64(file) {
+    return new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.readAsDataURL(file);
+      reader.onload = () => resolve(reader.result);
+      reader.onerror = error => reject(error);
+    });
+  }
   deleteEntry(entry) {
     var index = this.user.distance.indexOf(entry)
     this.user.distance.splice(index, 1)
