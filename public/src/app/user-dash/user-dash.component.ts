@@ -4,8 +4,10 @@ import { ApiService } from '../api.service'
 import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
 import { AppComponent } from '../app.component';
 import { LeaderComponent } from '../leader/leader.component';
-
 import { createWorker } from 'tesseract.js';
+
+
+import { NgxImageCompressService } from 'ngx-image-compress';
 
 
 @Component({
@@ -18,7 +20,7 @@ export class UserDashComponent implements OnInit {
   //======Variables======
   Chart = Chart;
   user;
-  totalDist : any;
+  totalDist: any;
   distLeft;
   milesForm: FormGroup
   arr;
@@ -28,7 +30,10 @@ export class UserDashComponent implements OnInit {
   File;
   base;
   showleader = false
-  Quote=""
+  Quote = ""
+
+  imgResultBeforeCompress: string;
+  imgResultAfterCompress: string;
   //====================
 
 
@@ -37,6 +42,7 @@ export class UserDashComponent implements OnInit {
     private formBuilder: FormBuilder,
     private appComp: AppComponent,
     private leadComp: LeaderComponent,
+    private imageCompress: NgxImageCompressService
   ) { }
 
   ngOnInit() {
@@ -52,7 +58,7 @@ export class UserDashComponent implements OnInit {
     var dist = 0
     for (let i = 0; i < this.user.distance.length; i++) {
       dist += this.user.distance[i][1]
-      
+
     }
     this.totalDist = dist.toFixed(2)
     this.distLeft = this.user.goal - this.totalDist
@@ -98,7 +104,7 @@ export class UserDashComponent implements OnInit {
 
     let observable = this._apiService.updateApi(this.user);
     observable.subscribe(results => {
-      
+
       this.Chart.data.datasets[0].data = [this.distLeft, this.totalDist]
       this.Chart.update();
       this.leadComp.ngOnInit()
@@ -107,17 +113,38 @@ export class UserDashComponent implements OnInit {
     })
   }
 
-  Upload(event) {
-    this.File = event.target.files[0]
-    // var file = this.File
-    this.getBase64(this.File).then(
-      data => {
-        this.base = data
-      }
-    );
-    // console.log(event)
-  }
+  // Upload(event) {
+  //   this.File = event.target.files[0]
+  //   // var file = this.File
+  //   this.getBase64(this.File).then(
+  //     data => {
+  //       this.base = data
+  //     }
+  //   );
+  //   // console.log(event)
+  // }
 
+  //+++++++++++++++++++++++++++++++++++++
+  compressFile() {
+    this.imageCompress.uploadFile().then(({ image, orientation }) => {
+
+      this.imgResultBeforeCompress = image;
+      console.log(this.imgResultBeforeCompress)
+
+      console.warn('Size in bytes was:', this.imageCompress.byteCount(image));
+
+      this.imageCompress.compressFile(image, orientation, 50, 50).then(
+        result => {
+          this.imgResultAfterCompress = result;
+          this.File = this.imgResultAfterCompress
+          this.base = this.imgResultAfterCompress
+          console.log(this.imgResultAfterCompress)
+          console.warn('Size in bytes is now:', this.imageCompress.byteCount(result));
+        }
+      );
+
+    });
+  }
   ReadImg() {
     this.spinner = true
     const worker = createWorker({
@@ -150,21 +177,21 @@ export class UserDashComponent implements OnInit {
 
     })();
   }
-  getBase64(file) {
-    return new Promise((resolve, reject) => {
-      const reader = new FileReader();
-      reader.readAsDataURL(file);
-      reader.onload = () => resolve(reader.result);
-      reader.onerror = error => reject(error);
-    });
-  }
-  deleteEntry(entry){
+  // getBase64(file) {
+  //   return new Promise((resolve, reject) => {
+  //     const reader = new FileReader();
+  //     reader.readAsDataURL(file);
+  //     reader.onload = () => resolve(reader.result);
+  //     reader.onerror = error => reject(error);
+  //   });
+  // }
+  deleteEntry(entry) {
     var index = this.user.distance.indexOf(entry)
-    this.user.distance.splice(index,1)
+    this.user.distance.splice(index, 1)
     var dist = 0
     for (let i = 0; i < this.user.distance.length; i++) {
       dist += this.user.distance[i][1]
-      
+
     }
     this.totalDist = dist.toFixed(2)
     this.user.totalDist = this.totalDist
@@ -175,28 +202,28 @@ export class UserDashComponent implements OnInit {
     })
   }
 
-  show(id){
-    var dialog= <HTMLDivElement>document.getElementById(id);
+  show(id) {
+    var dialog = <HTMLDivElement>document.getElementById(id);
     dialog.className = "modal show"
     dialog.style.display = "block"
     // console.log(dialog)
   }
-  close(id){
-    var dialog= <HTMLDivElement>document.getElementById(id);
+  close(id) {
+    var dialog = <HTMLDivElement>document.getElementById(id);
     dialog.className = "modal"
     dialog.style.display = "none"
     // console.log(dialog)
   }
-  showLeader(){
+  showLeader() {
     this.showleader = true
   }
-  showlead(){
+  showlead() {
 
     this.appComp.showLeader = true
     this.appComp.userDash = false
 
   }
-  updateGoal(){
+  updateGoal() {
     this.user.goal = this.milesForm.controls.goal.value
     this.distLeft = this.user.goal - this.totalDist
 
@@ -207,11 +234,11 @@ export class UserDashComponent implements OnInit {
     })
 
   }
-  logout(){
+  logout() {
     localStorage.clear()
   }
 
-  quote(){
+  quote() {
     var quoteList = {
       1: "If you want to achieve greatness stop asking for permission. --Anonymous",
 

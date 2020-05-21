@@ -88,6 +88,10 @@
 
       </div>
   </div>
+  <!-- <div>
+    <img *ngIf="imgResultBeforeCompress" [src]="imgResultBeforeCompress" alt="">
+    <img *ngIf="imgResultAfterCompress" [src]="imgResultAfterCompress" alt="">
+  </div> -->
 <!-- ==== Add Miles ==== -->
 
 <div class="modal" id="myModal">
@@ -111,7 +115,9 @@
             <input class="form-control" formControlName='date' type="date">
             <input *ngIf="File" class="btn btn-dark" type="submit">
           </form>
-          <input class="btn btn-dark" type="file" (change)="Upload($event)">
+          <button class="btn btn-dark"  (click)="compressFile()">Upload Image</button>
+
+          <!-- <input class="btn btn-dark" type="file" (change)="Upload($event)"> -->
           <form (submit)="ReadImg()">
             <!-- <button *ngIf="File" class="btn btn-dark read-btn" type="submit">
               <div *ngIf="spinner" class="spinner-border spinner-border-sm"></div>

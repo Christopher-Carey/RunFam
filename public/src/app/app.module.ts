@@ -12,6 +12,8 @@ import { UserDashComponent } from './user-dash/user-dash.component';
 import { LeaderComponent } from './leader/leader.component';
 import { LeaderDashComponent } from './leader-dash/leader-dash.component';
 
+import {NgxImageCompressService} from 'ngx-image-compress';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,7 +30,14 @@ import { LeaderDashComponent } from './leader-dash/leader-dash.component';
     FormsModule,
     ReactiveFormsModule,
   ],
-  providers: [ApiService,LoginComponent,AppComponent,UserDashComponent,LeaderComponent],
+  providers: [
+    ApiService,
+    LoginComponent
+    ,AppComponent,
+    UserDashComponent,
+    LeaderComponent,
+    NgxImageCompressService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

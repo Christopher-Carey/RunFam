@@ -21,6 +21,7 @@
     "@angular/router": "~8.2.14",
     "bcryptjs": "^2.4.3",
     "chart.js": "^2.9.3",
+    "ngx-image-compress": "^8.0.4",
     "ngx-spinner": "^9.0.2",
     "rxjs": "~6.4.0",
     "tesseract.js": "^2.1.1",
