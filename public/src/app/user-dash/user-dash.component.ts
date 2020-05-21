@@ -91,27 +91,27 @@ export class UserDashComponent implements OnInit {
   addMiles() {
     this.totalDist = 0
     this.user.distance.unshift([this.milesForm.controls.date.value, this.milesForm.controls.miles.value, this.imgResultAfterCompress])
-
-    // =================
     var dist = 0
     for (let i = 0; i < this.user.distance.length; i++) {
       dist += this.user.distance[i][1]
     }
     this.totalDist = dist.toFixed(2)
     this.user.totalDist = this.totalDist
-    // =================
 
     let observable = this._apiService.updateApi(this.user);
     observable.subscribe(results => {
-
+      
       this.Chart.data.datasets[0].data = [this.distLeft, this.totalDist]
       this.Chart.update();
-      this.leadComp.ngOnInit()
+      document.getElementById("blah").click()
+      // this.leadComp.ngOnInit()
+      
       this.File = ""
       this.imgResultAfterCompress = ""
+      this.milesForm.controls.date.setValue(" ")
+      this.milesForm.controls.miles.setValue(" ")
     })
   }
-
   Upload(event) {
     this.File = event.target.files[0]
     this.getBase64(this.File).then(
@@ -131,15 +131,16 @@ export class UserDashComponent implements OnInit {
         );
       }
     );
-
-   
-
-
-    // var file = this.File
-    // console.log(event)
+  }
+  getBase64(file) {
+    return new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.readAsDataURL(file);
+      reader.onload = () => resolve(reader.result);
+      reader.onerror = error => reject(error);
+    });
   }
 
-  //+++++++++++++++++++++++++++++++++++++
   // compressFile() {
   //   this.imageCompress.uploadFile().then(({ image, orientation }) => {
   //     console.log(orientation)
@@ -161,6 +162,7 @@ export class UserDashComponent implements OnInit {
 
   //   });
   // }
+
   ReadImg() {
     this.spinner = true
     const worker = createWorker({
@@ -193,14 +195,7 @@ export class UserDashComponent implements OnInit {
 
     })();
   }
-  getBase64(file) {
-    return new Promise((resolve, reject) => {
-      const reader = new FileReader();
-      reader.readAsDataURL(file);
-      reader.onload = () => resolve(reader.result);
-      reader.onerror = error => reject(error);
-    });
-  }
+
   deleteEntry(entry) {
     var index = this.user.distance.indexOf(entry)
     this.user.distance.splice(index, 1)
