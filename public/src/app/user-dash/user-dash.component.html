@@ -49,9 +49,11 @@
 
         <!-- ==== Dynamic Distance Entry ====== -->
         <div *ngFor="let x of user.distance" class="media border p-3">
-          <button type="button" data-toggle="modal" (click)="show(x[0])">
+          <img data-toggle="modal" (click)="show(x[0])" style="width: 40px;" [src]="x[2]" alt="">
+       
+          <!-- <button type="button" data-toggle="modal" (click)="show(x[0])">
             <img style="width: 40px;" [src]="x[2]" alt="">
-          </button>
+          </button> -->
           <div class="modal" [attr.id]="x[0]">
             <div class="modal-dialog">
               <div class="modal-content">
