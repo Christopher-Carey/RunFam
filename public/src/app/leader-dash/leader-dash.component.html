@@ -59,7 +59,10 @@
           <td>{{x.totalDist}} Miles</td>
           <!-- <td *ngIf="x.distance.length >= 1"><button type="button" data-toggle="modal" (click)="show(x.distance[0][2])">
             <img style="width: 40px;" [src]="x.distance[0][2]" alt="">
-          </button></td>
+          </button></td> -->
+          <td *ngIf="x.distance.length >= 1">
+            <img data-toggle="modal" (click)="show(x.distance[0][2])" style="width: 40px;" [src]="x.distance[0][2]" alt="">
+          </td>
           <div *ngIf="x.distance.length >= 1" class="modal" [attr.id]="x.distance[0][2]">
             <div class="modal-dialog lead-dialog">
               <div class="modal-content">
@@ -71,7 +74,7 @@
                 </div>
               </div>
             </div>
-          </div> -->
+          </div>
         </tr>
       </tbody>
     </table>
@@ -118,9 +121,12 @@
           <td>{{z+1}}</td>
           <td>{{x.name}}</td>
           <td>{{x.totalDist}} Miles</td>
-          <!-- <td *ngIf="x.distance.length >= 1"><button type="button" data-toggle="modal" (click)="show(x.distance[0][2])">
+          <td *ngIf="x.distance.length >= 1"><button type="button" data-toggle="modal" (click)="show(x.distance[0][2])">
             <img style="width: 40px;" [src]="x.distance[0][2]" alt="">
           </button></td>
+          <td *ngIf="x.distance.length >= 1">
+            <img data-toggle="modal" (click)="show(x.distance[0][2])" style="width: 40px;" [src]="x.distance[0][2]" alt="">
+          </td>
           <div *ngIf="x.distance.length >= 1" class="modal" [attr.id]="x.distance[0][2]">
             <div class="modal-dialog lead-dialog">
               <div class="modal-content">
@@ -132,7 +138,7 @@
                 </div>
               </div>
             </div>
-          </div> -->
+          </div>
         </tr>
       </tbody>
     </table>
