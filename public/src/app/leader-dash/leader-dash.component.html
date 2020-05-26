@@ -121,9 +121,9 @@
           <td>{{z+1}}</td>
           <td>{{x.name}}</td>
           <td>{{x.totalDist}} Miles</td>
-          <td *ngIf="x.distance.length >= 1"><button type="button" data-toggle="modal" (click)="show(x.distance[0][2])">
+          <!-- <td *ngIf="x.distance.length >= 1"><button type="button" data-toggle="modal" (click)="show(x.distance[0][2])">
             <img style="width: 40px;" [src]="x.distance[0][2]" alt="">
-          </button></td>
+          </button></td> -->
           <td *ngIf="x.distance.length >= 1">
             <img data-toggle="modal" (click)="show(x.distance[0][2])" style="width: 40px;" [src]="x.distance[0][2]" alt="">
           </td>
@@ -147,15 +147,24 @@
   <div class="col-4">
     <div class="card">
       <h3 class="card-header">This Months Challenge</h3>
-      <h4 style="font-weight: bold; margin-top: 20px;" class="card-header challenge-title">May Mayhem Marathon</h4>
+      <img style="width: 100%;" src="../assets/img/bb.png" alt="">
+      <!-- <h4 style="font-weight: bold; margin-top: 20px;" class="card-header challenge-title"><img src="../assets/img/flex/bb.png" alt=""></h4> -->
 
-      
+<!--       
       <h4>
-        This month the top distance for Runners and Power
-        Walkers will win. <br> Be sure to upload a pic of tracked miles
-      </h4>
+        Top runner and power walker wins. Also, as long
+        as you have logged miles you will be entered
+        to also win in the random drawing for runners and walkers. <br> Be sure to upload a pic of tracked miles
+      </h4> -->
+      <p>
+
+        Top runner and power walker wins. Also, as long
+        as you have logged miles you will be entered
+        to win in the random drawing for runners and walkers. <br> Be sure to upload a pic of tracked miles
+      </p>
+      
       <h4 class="card-header challenge-title">This Months Prize</h4>
-      <h4>$10 Starbucks Gift Card to top Runner and Power Walker!</h4>
+      <p>$10 Starbucks Gift Card to all winners!</p>
 
     </div>
     <div class="card">
